@@ -96,11 +96,11 @@ We have a field where we can upload our reverse shell script! We seem to be able
 
 I'll upload the **php-reverse-shell.php** file and create a new directory called **testDirectory**.
 
-After creating the post, there didn't seem to be any errors so now I need to find where this testDirectory folder is on the webserver. Looking back at results of Gobuster from earlier, I noticed another interesting sub-directory called **attachments**. This could be where the uploaded files are.
+After creating the post, there didn't seem to be any errors so now I need to find where this testDirectory folder is on the webserver. Looking back at the results of Gobuster from earlier, I noticed another interesting sub-directory called **attachments**. This could be where the uploaded files are.
 
 <img style="float: left;" src="screenshots/screenshot15.png">
 
-Nice! However, **there were no files inside the folder**. My guess is that there was some **file upload restrictions** that have been enforced by the web server. It probably detected that the file I wanted to upload was a php file and blocked it. I'll need to find some way to bypass these restrictions.
+Nice! However, **there were no files inside the testDirectory folder**. My guess is that there was some **file upload restrictions** that have been enforced by the web server. It probably detected that the file I wanted to upload was a php file and blocked it. Looks like I'll need to find some way to bypass these restrictions.
 
 One way that I've learnt to do so is by simply changing the extension to a less common extension, such as **.phtml**. This works against file restrictions which work based on **blacklists**, as the developer might have forgotten to blacklist these uncommon extensions.
 
