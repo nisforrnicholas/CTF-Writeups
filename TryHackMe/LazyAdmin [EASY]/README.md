@@ -84,7 +84,7 @@ Annnnnnd we're in!
 
 My first thought is to try uploading a malicious file onto the webserver, considering that we have access to all of those directories that contains those files. I'll try using the **php reverse shell** script that I already have stored on my computer.
 
-Looking for a point where I can upload files, I come across the **POST > CREATE** on the sidebar at the left of the dashboard. Clicking on it, I see a **upload file button**. This could be where I can upload my reverse shell script.
+Looking for a point where I can upload files, I come across the **POST > CREATE** on the sidebar at the left of the dashboard. Clicking on it, I see a **Add File button**. This could be where I can upload my reverse shell script.
 
 <img style="float: left;" src="screenshots/screenshot13.png">
 
