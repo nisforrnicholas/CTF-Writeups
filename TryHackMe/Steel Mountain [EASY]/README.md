@@ -32,8 +32,6 @@ Alternatively, I could also look at the source code to find out his name.
 
 #### **[TASK 2] INITIAL ACCESS**
 
-**[TASK 2] INITIAL ACCESS**
-
 * **Scan the machine with nmap. What is the other port running a web server on?**
 
 I ran a basic **nmap** scan on the top 1000 ports with the following command:
@@ -48,7 +46,7 @@ The results of the nmap scan are as follows:
 
 As we can see, the other port that a web server is running on is **8080**.
 
-
+<br>
 
 * **Take a look at the other web server. What file server is running?**
 
@@ -58,7 +56,7 @@ Accessing the other web server running on port 8080, I came to this website.
 
 We can see that the file server that is running is the **rejetto http file server**.
 
-
+<br>
 
 * **What is the CVE number to exploit this file server?**
 
@@ -78,7 +76,7 @@ Hence, it will not handle nullbyte requests, which means we can use "%00" to byp
 
 *A VBS file is a Virtual Basic script written in the VBScript scripting language. It contains code that can be executed within Windows or Internet Explorer, via the Windows-based script host (Wscript.exe), to perform certain admin and processing functions.* ]
 
-
+<br>
 
 * **Use Metasploit to get an initial shell. What is the user flag?**
 
@@ -92,7 +90,7 @@ I then ran the exploit, which gave the following results:
 
 Looks like I'm in! :smile:
 
-
+<br>
 
 We are initially logged in as the user **Bill**.
 
@@ -102,7 +100,7 @@ We can then find the **user.txt** file can be found in his desktop directory.
 
 <img style="float: left;" src="screenshots/screenshot10.png">
 
-
+<br>
 
 ---
 
@@ -116,7 +114,7 @@ We simply git clone the privesc script onto our local machine. We then use Meter
 
 <img style="float: left;" src="screenshots/screenshot11.png">
 
-
+<br>
 
 * **To execute this using Meterpreter, I will type load powershell into meterpreter. Then I will enter powershell by entering powershell_shell:**
 
@@ -126,7 +124,7 @@ After loading the powershell extension, we get new options available!
 
 <img style="float: left;" src="screenshots/screenshot13.png">
 
-
+<br>
 
 * **Take close attention to the CanRestart option that is set to true. What is the name of the unquoted service path service name?**
 
@@ -134,7 +132,7 @@ To run the script, I first run the script with '**. .\PowerUp.ps1**', followed b
 
 <img style="float: left;" src="screenshots/screenshot14.png">
 
-
+<br>
 
 CanRestart option that is set to true:
 
@@ -142,7 +140,7 @@ CanRestart option that is set to true:
 
 Hence, the name of the unquoted service path name is **AdvancedSystemCareService9**.
 
-
+<br>
 
 * **The CanRestart option being true, allows us to restart a service on the system, the directory to the application is also write-able. This means we can replace the legitimate application with our malicious one, restart the service, which will run our infected program!**
 
@@ -180,7 +178,7 @@ Note: Since the destination directory contains spaces, I had to encapsulate the 
 
 It will prompt us whether we would like to overwrite the file, and with that, I have now successfully overwritten the file! One thing to note is that I tried other methods to overwrite the file, including moving the payload to the directory first, and trying to delete the original service file. That did not work as I kept getting 'access denied' error. Also, I had the payload named as 'advanced.exe' first, and when I tried to rename it to 'ASCService.exe' **inside** the '**Advanced SystemCare**' directory, it would not let me. So it seems the safest bet would be to rename the payload **first**, before copying over to the target directory.
 
-
+<br>
 
 Before I start the service, we run a **netcat** listener on our local machine first, to catch the connection.
 
@@ -198,7 +196,7 @@ The **root.txt** flag can be found in the administrator Desktop directory!
 
 <img style="float: left;" src="screenshots/screenshot24.png">
 
-
+<br>
 
 ---
 
@@ -238,7 +236,7 @@ With these all set up, we can run the exploit script!
 
 Aaaaand we're in!
 
-
+<br>
 
 We first navigate over to bill's desktop. Now, we can host another python http server on our local machine, and use **wget** over on our target machine to download the winPEAS.exe file over. To use wget, we preface the command with '**powershell -c**'. The -c tag means '**command**' 
 
@@ -250,9 +248,9 @@ Now, we can just run the file and see what results we get!
 
 <img style="float: left;" src="screenshots/screenshot30.png">
 
+<br>
 
-
-
+<br>
 
 * **Congratulations, we're now onto the system. Now we can pull winPEAS to the system using powershell -c.**
 
@@ -260,7 +258,7 @@ Now, we can just run the file and see what results we get!
 
 <img style="float: left;" src="screenshots/screenshot31.png">
 
-
+<br>
 
 * **What powershell -c command could we run to manually find out the service name?** 
 
@@ -270,7 +268,7 @@ Now, we can just run the file and see what results we get!
 powershell -c get-service
 ```
 
-
+<br>
 
 * **Now let's escalate to Administrator with our new found knowledge.**
 
