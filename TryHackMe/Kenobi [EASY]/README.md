@@ -1,5 +1,7 @@
 # Kenobi
 
+##### Written: 28/08/2020
+
 **IP Address: 10.10.243.180**
 
 I first tried to visit the given IP address using my web browser to see if it hosted any website. I was greeted with the following website (Port 80 is open for HTTP):

@@ -1,5 +1,7 @@
 # The Cod Caper
 
+##### Written: 29/08/2020
+
 **IP Address: 10.10.83.189**
 
 Navigating to the IP address, I can see an Apache2 Default Page. This means that **port 80** is most probably open.

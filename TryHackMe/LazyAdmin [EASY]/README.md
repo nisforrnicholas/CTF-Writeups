@@ -1,5 +1,7 @@
 # LazyAdmin
 
+##### Written: 18/05/2021
+
 #### IP Address: 10.10.26.122
 
 First, I ran a nmap scan on the target machine so as to enumerate more information about the services running.

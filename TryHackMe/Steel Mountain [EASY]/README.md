@@ -1,8 +1,10 @@
 # Steel Mountain
 
+##### Written: 10/09/2020
+
 #### IP Address: 10.10.213.55
 
----
+<br>
 
 #### **[TASK 1] INTRODUCTION**
 

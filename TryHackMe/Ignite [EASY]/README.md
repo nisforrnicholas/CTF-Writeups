@@ -1,5 +1,7 @@
 # IGNITE
 
+##### Written: 06/09/2020
+
 #### IP Address: 10.10.162.4
 
 First, I ran a basic nmap scan (only most common ports) on the machine, and saw that only **port 80** is open, serving **Apache httpd 2.4.18**.

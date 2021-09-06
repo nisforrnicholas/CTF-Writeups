@@ -1,5 +1,7 @@
 # INCLUSION
 
+##### Written: 17/05/2021
+
 #### IP Address: 10.10.16.93
 
 First, I ran a basic nmap scan on the target machine with standard scripts loaded and version enumeration configured. The results are as follows:
