@@ -134,5 +134,5 @@ Now running the command with '**sudo**', we are logged in as root!
 
 With that, we can access root's home directory and obtain the final flag.
 
-<img style="float: left;" src="screenshots/screenshot15.png">
+<img style="float: left;" src="screenshots/screenshot16.png">
 
