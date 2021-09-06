@@ -20,7 +20,7 @@ To find out the name of the employee, I just had to save the image, and his name
 
 <img style="float: left;" src="screenshots/screenshot2.png">
 
-
+<br>
 
 Alternatively, I could also look at the source code to find out his name.
 
