@@ -194,7 +194,7 @@ Then, we press '**esc**' to activate command mode, before typing '**:sh**' to op
 
 <br>
 
-We got root!!! :smile:
+We got root! :smile:
 
 <img style="float: left;" src="screenshots/screenshot25.png">
 
