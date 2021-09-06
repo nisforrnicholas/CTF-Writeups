@@ -26,6 +26,8 @@ Alternatively, I could also look at the source code to find out his name.
 
 <img style="float: left;" src="screenshots/screenshot3.png">
 
+<br>
+
 ---
 
 #### **[TASK 2] INITIAL ACCESS**
