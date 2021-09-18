@@ -2,19 +2,19 @@
 
 ##### Written: 19/09/2020
 
-#### IP Address: 10.10.63.185
+##### IP Address: 10.10.63.185
 
 <br>
 
-**Deploy the machine**
+#### Deploy the machine
 
 Done.
 
 <br>
 
-**Enumerate the machine and get all the important information**
+#### Enumerate the machine and get all the important information
 
-**How many open ports?**
+#### How many open ports?
 
 I ran a basic nmap scan (top 1000 ports).
 
@@ -26,7 +26,7 @@ No of open ports: **3**
 
 <br>
 
-**How do you redirect yourself to a secret page?**
+#### How do you redirect yourself to a secret page?
 
 Let's check out that webserver.
 
@@ -52,7 +52,7 @@ We can redirect ourself to a secret page through the **user-agent**.
 
 <br>
 
-**What is the agent name?**
+#### What is the agent name?
 
 Let’s use **Burpsuite** to intercept the request and change the user-agent! 
 
@@ -96,7 +96,7 @@ Agent's name: **chris**
 
 <br>
 
-**Done enumerate the machine? Time to brute your way out**
+#### Done enumerate the machine? Time to brute your way out
 
 **FTP password**
 
@@ -188,7 +188,7 @@ Using the rockyou.txt wordlist, I managed to obtain the zip file password: **ali
 
  <br>
 
-**Obtain the steg password**
+#### Obtain the steg password
 
 After extracting the zip file, I managed to obtain the text file within: '**To_agentR.txt**'.
 
@@ -216,7 +216,7 @@ Looks like we got the passphrase: **Area51**
 
 <br>
 
-**Who is the other agent (in full name)?**
+#### Who is the other agent (in full name)?
 
 I then used **steghide** (once again) to extract the hidden data within the '**cute-alien.jpg**' file.
 
@@ -232,9 +232,9 @@ His password is: **hackerrules!**
 
 <br>
 
-**You know the drill.**
+#### You know the drill.
 
-**What is the user flag?**
+#### What is the user flag?
 
 With James's username and password, I can log into ssh with his account:
 
@@ -246,7 +246,7 @@ I'm in!
 
 <br>
 
-**What is the incident of the photo called?**
+#### What is the incident of the photo called?
 
 I noticed another JPEG file called '**Alien_autospy.jpg**'. Seeing as python3 is installed on the remote machine, I can set up a simple python http server, and download that image file from my local machine. 
 
@@ -280,9 +280,9 @@ Incident of the photo: **Roswell Alien Autopsy**
 
 <br>
 
-**Enough with the extraordinary stuff? Time to get real.**
+#### Enough with the extraordinary stuff? Time to get real.
 
-**CVE number for the escalation (Format: CVE-xxxx-xxxx)**
+#### CVE number for the escalation (Format: CVE-xxxx-xxxx)
 
 First, I checked the sudo privileges that James has on the machine:
 
@@ -302,7 +302,7 @@ CVE number: **2019-14287**
 
 <br>
 
-**What is the root flag?**
+#### What is the root flag?
 
 One thing to note is that this exploit only works for **Sudo < 1.2.28**. Let's check our sudo version on the remote machine. 
 
@@ -332,7 +332,7 @@ And we have root access!
 
 <br>
 
-**(Bonus) Who is Agent R?**
+#### (Bonus) Who is Agent R?
 
 **DesKel**
 
