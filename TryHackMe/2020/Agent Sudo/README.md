@@ -12,6 +12,8 @@ Done.
 
 <br>
 
+---
+
 ### Enumerate the machine and get all the important information
 
 ### How many open ports?
