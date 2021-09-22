@@ -12,9 +12,9 @@ Done.
 
 <br>
 
-#### Enumerate the machine and get all the important information
+### Enumerate the machine and get all the important information
 
-#### How many open ports?
+### How many open ports?
 
 To find out what ports are open on our target machine, we can run a basic **nmap** scan (top 1000 ports).
 
@@ -28,7 +28,7 @@ Seems like **ftp (21)**, **ssh (22)** and a **HTTP server (80)** is up and runni
 
 ---
 
-#### How do you redirect yourself to a secret page?
+### How do you redirect yourself to a secret page?
 
 Let's check out that webserver first.
 
@@ -56,7 +56,7 @@ We are actually able to redirect ourselves to a secret page using the **user-age
 
 ---
 
-#### What is the agent name?
+### What is the agent name?
 
 Let’s use **Burpsuite** to intercept the request and change the **user-agent** header. 
 
@@ -112,9 +112,9 @@ We also note that **Agent J** is mentioned. Interesting stuff.
 
 ---
 
-#### Done enumerate the machine? Time to brute your way out
+### Done enumerate the machine? Time to brute your way out
 
-#### FTP password
+### FTP password
 
 First, let's try to see if anonymous login is enabled on the FTP server. This is a common misconfiguration on FTP machines.
 
@@ -136,7 +136,7 @@ hydra -l chris -P /usr/share/wordlists/rockyou.txt -o ftp_pass ftp://10.10.54.22
 
 ---
 
-#### Obtain the Zip file password
+### Obtain the Zip file password
 
 With the password cracked, we can now login as **chris** into the FTP server.
 
@@ -222,7 +222,7 @@ Using the **rockyou.txt** wordlist, we managed to obtain the zip file password: 
 
 ---
 
-#### Obtain the steg password
+### Obtain the steg password
 
 After extracting the zip file, we managed to obtain the text file within: **To_agentR.txt**.
 
@@ -256,7 +256,7 @@ In the end, after referring to a write-up, I realized it was just simple **base6
 
 ---
 
-#### Who is the other agent (in full name)?
+### Who is the other agent (in full name)?
 
 We can use **Steghide** again to extract the hidden data within the **cute-alien.jpg** file.
 
@@ -268,7 +268,7 @@ We can use **Steghide** again to extract the hidden data within the **cute-alien
 
 ---
 
-#### SSH password
+### SSH password
 
 **His password is: hackerrules!**
 
@@ -276,9 +276,9 @@ We can use **Steghide** again to extract the hidden data within the **cute-alien
 
 ---
 
-#### You know the drill.
+### You know the drill.
 
-#### What is the user flag?
+### What is the user flag?
 
 With James's username and password, we can log into the SSH server with his account:
 
@@ -292,7 +292,7 @@ We're in!
 
 ---
 
-#### What is the incident of the photo called?
+### What is the incident of the photo called?
 
 I noticed another JPEG file called '**Alien_autospy.jpg**'. Seeing as python3 is installed on the remote machine, we can set up a simple python HTTP server and transfer that image file to my local machine. 
 
@@ -330,9 +330,9 @@ After looking at numerous different articles, I decided to use the hint, which m
 
 ---
 
-#### Enough with the extraordinary stuff? Time to get real.
+### Enough with the extraordinary stuff? Time to get real.
 
-#### CVE number for the escalation (Format: CVE-xxxx-xxxx)
+### CVE number for the escalation (Format: CVE-xxxx-xxxx)
 
 First, we can check the **sudo** privileges that James has on the machine:
 
@@ -356,7 +356,7 @@ This is the exploit we will be using to allow us to run /bin/bash as root.
 
 ---
 
-#### What is the root flag?
+### What is the root flag?
 
 One thing to note is that this exploit only works for **Sudo < 1.2.28**. Let's check our sudo version on the remote machine. 
 
