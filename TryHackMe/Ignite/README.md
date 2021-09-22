@@ -2,17 +2,13 @@
 
 ##### Written: 06/09/2020
 
-##### IP Address: 10.10.162.4
-
-<br>
+#### IP Address: 10.10.162.4
 
 First, I ran a basic nmap scan (only most common ports) on the machine, and saw that only **port 80** is open, serving **Apache httpd 2.4.18**.
 
 An interesting to note is that there is a disallowed entry "**/fuel/**" in the robots.txt file.
 
 <img style="float: left;" src="screenshots/screenshot1.png">
-
-<br>
 
 Navigating to the IP in my browser, I can see a FUEL CMS webpage:
 
@@ -30,19 +26,13 @@ We can also access the log in page in the **/fuel/** directory (discovered by nm
 
 <img style="float: left;" src="screenshots/screenshot4.png">
 
-<br>
-
 Fortunately, the admin did not change his/her password! Hence, I was able to log in with the default credentials:
 
 <img style="float: left;" src="screenshots/screenshot5.png">
 
-<br>
-
 Clicking on "**Click here for your site documentation**" , I can see that the site is running **FUEL CMS 1.4**.
 
 <img style="float: left;" src="screenshots/screenshot6.png">
-
-<br>
 
 With the knowledge of the version number, I can start looking for an exploit using **searchsploit.** The command used is:
 
@@ -61,8 +51,6 @@ searchsploit -m php/webapps/48741.txt
 ```
 
 to mirror/copy the exploit onto my local machine. From there, I can simply view it with any text editor. Since this is a .txt file, it is most probably not an executable file, but more of a guide on how to run the exploit on the site.
-
-<br>
 
 Looking at the exploit:
 
@@ -114,15 +102,17 @@ I saved it as '**fuel.req**', and used sqlmap as follows:
 
 -p = sets the specific parameter to be tested (since col is specified to be the injectable param, then I would like to just focus on this)
 
-<br>
 
-**Unfortunately, the SQL Injection did not work**
+
+#### Unfortunately, the SQL Injection did not work
 
 <img style="float: left;" src="screenshots/screenshot13.png">
 
-After hitting this dead end, I will be try looking at the other exploit that was provided by searchsploit instead.
+While I figure out why it did not work, I will be looking at the other exploit that was provided by searchsploit.
 
-<br>
+
+
+---
 
 Since the first exploit did not work, I shall be trying out the second exploit, which is supposed to let me gain RCE on the machine.
 
@@ -144,9 +134,7 @@ Seems like we just have to change the **url** to the victim's IP address. Also, 
 
 - **print r.text[0:dup]** changed to **print(r.text[0:dup])**
 
-**Lesson learnt: As many exploits were written in past python versions, alterations are needed**
-
-<br>
+**Lesson learnt: As many exploits were written in past python versions, alterations are needed!**
 
 Running the exploit, we can see that it works:
 
@@ -170,11 +158,7 @@ Running this on the exploit allowed me to gain access:
 
 
 
-
-
-**First flag can be found in www-data's home directory.**
-
-<br>
+#### First flag can be found in www-data's home directory.
 
 To find any potential privesc attack vectors, I went into **/dev/shm** and downloaded the **.linpeas.sh** script from my local host. This will help speed up the process of finding such attack vectors.
 
@@ -191,7 +175,7 @@ Hence, sometimes to find important information, we just have to be smart and thi
 
 With the root password, I can log in as root and obtain the final flag in root.txt.
 
- <br>
+ 
 
 When I was trying to log in via '**su root**', an error "**must be run from a terminal**" kept popping up, disallowing me from logging in as root. Doing some research, this seems to be because the shell spawned from our reverse shell code is just a simple one, and not a fully-interactive TTY shell.
 
@@ -203,7 +187,7 @@ Using this code in my shell, it easily upgrades to a nicer one that looks more s
 
 <img style="float: left;" src="screenshots/screenshot23.png">
 
-<Br>
 
-**The final flag can then be obtained from root.txt in the home directory of root**
+
+#### The final flag can then be obtained from root.txt in the home directory of root
 

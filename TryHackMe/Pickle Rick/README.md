@@ -2,17 +2,17 @@
 
 ##### Written: 20/09/2020
 
+<br>
+
 ##### IP Address: 10.10.28.153
 
-<br>
-
-#### This Rick and Morty themed challenge requires you to exploit a webserver to find 3 ingredients that will help Rick make his potion to transform himself back into a human from a pickle.
+**This Rick and Morty themed challenge requires you to exploit a webserver to find 3 ingredients that will help Rick make his potion to transform himself back into a human from a pickle.**
 
 <br>
 
-#### Deploy the virtual machine on this task and explore the web application.
+**Deploy the virtual machine on this task and explore the web application.**
 
-#### What is the first ingredient Rick needs?
+**What is the first ingredient Rick needs?**
 
 First, I ran a basic nmap scan (top 1000 ports) on the machine:
 
@@ -20,21 +20,15 @@ First, I ran a basic nmap scan (top 1000 ports) on the machine:
 
 Looks like we got **ssh** and a **webserver** running! While I continue enumerating, I will run another nmap scan, this time against ALL the ports on the machine.
 
-<br>
-
 Let's check out that webserver:
 
 <img style="float: left;" src="screenshots/screenshot2.png">
 
 Looks like nothing of significance so far. I'll run a **gobuster** directory brute-force against the webserver to see if I can enumerate any hidden directories. I'll also be specifying the extension to search for **.php** as well, using the '**-x**' tag.
 
-<br>
-
-Looking at the source code, I found a username  =>   **R1ckRul3s**
+Looking at the source code, I found a username!  =>   **R1ckRul3s**
 
 <img style="float: left;" src="screenshots/screenshot3.png">
-
-<br>
 
 **/robots.txt** also had some funny text:
 
@@ -116,8 +110,6 @@ That's a weird string: **Vm1wR1UxTnRWa2RUV0d4VFlrZFNjRlV3V2t0alJsWnlWbXQwVkUxV1d
 
 Could this be base64 encoding? Unfortunately, it is not. It's also not base32 or base58 encoding.
 
-<br>
-
 Let's focus on the command panel first:
 
 **After using ls:**
@@ -146,9 +138,9 @@ Let's try and set up a reverse shell script. I'll be using PenTestMonkey's cheat
 
 <img style="float: left;" src="screenshots/screenshot20.png">
 
-And we're in!
+Aaaaand we're in!
 
-Since I'll be running the commands within my own shell, I should not be restricted to whatever was set in the browser. That means that I'll be able to run '**cat**'.
+Since I'll be running the commands within my own shell, I should not be restricted to whatever was set in the browser. That means that I'll be able to run '**cat**'
 
 <img style="float: left;" src="screenshots/screenshot21.png">
 
@@ -158,7 +150,7 @@ With that, I can obtain the first flag.
 
 ---
 
-#### Whats the second ingredient Rick needs?
+**Whats the second ingredient Rick needs?**
 
 Looking at '**clue.txt**':
 
@@ -180,7 +172,7 @@ In rick's directory, we find the second ingredient:
 
 ---
 
-#### Whats the final ingredient Rick needs?
+**Whats the final ingredient Rick needs?**
 
 I'm guessing the last ingredient will be found in the '**root**' folder. Since I can run **sudo** fully, I can just open up another bash shell as root. This can be done with a simple '**sudo bash**'. From here, I can cd into the root folder, and obtain the last flag.
 

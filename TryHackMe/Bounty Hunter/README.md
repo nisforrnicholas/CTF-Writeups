@@ -2,17 +2,17 @@
 
 ##### Written: 14/09/2020
 
-##### IP Address: 10.10.213.55
+#### IP Address: 10.10.213.55
 
 <br>
 
-#### Deploy the machine.
+**Deploy the machine.**
 
 Done.
 
 <br>
 
-#### Find open ports on the machine.
+**Find open ports on the machine.**
 
 I ran a basic **nmap** scan with the **-sC**, **-sV** and **-vv** tags set. For initial results, I first ran the scan against the top 1000 ports. After the results came through, I ran the scan again, this time against ALL of the ports.
 
@@ -36,7 +36,7 @@ I then decided to try connecting to the ftp server. Since anonymous login is ena
 
 <img style="float: left;" src="screenshots/screenshot3.png">
 
-And I'm in!
+And I'm in! :smiling_imp:
 
 <br>
 
@@ -72,9 +72,9 @@ Lin's password: **RedDr4gonSynd1cat3**
 
 <br>
 
-#### Obtain user.txt
+**Obtain user.txt**
 
-Now, we log into the ssh server as **lin**.
+Now, we log into the ssh server as lin.
 
 <img style="float: left;" src="screenshots/screenshot8.png">
 
@@ -84,7 +84,7 @@ With that, we can obtain the first flag!
 
 <br>
 
-#### Obtain Root.txt
+**Obtain Root.txt**
 
 Let's do some basic privesc enumeration. First, I check the sudo privileges on lin's account.
 
@@ -96,7 +96,7 @@ Using the '**file**' command, we can see that this '**tar**' file is an executab
 
 <img style="float: left;" src="screenshots/screenshot11.png">
 
-We can then look at **gtfobins.com** to find out if there are ways we can exploit this file.
+We can then look at **gtfobins.com** to find out if there are ways we can exploit this file! 
 
 <img style="float: left;" src="screenshots/screenshot12.png">
 
@@ -124,7 +124,7 @@ Hence, while creating the non-existent file, it will run the checkpoint action. 
 
 ---
 
-Bingo. Seems that if we run the above command, we can spawn an interactive system shell. Since we have sudo access, we can spawn a shell as root.
+Bingo! Seems that if we run the above command, we can spawn an interactive system shell. Since we have sudo access, we can spawn a shell as root.
 
 To test this command, we try running it normally. We can see a new shell is indeed spawned, and we are logged in as lin.
 

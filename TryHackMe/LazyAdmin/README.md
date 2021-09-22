@@ -2,13 +2,11 @@
 
 ##### Written: 18/05/2021
 
-##### IP Address: 10.10.26.122
-
-<br>
+#### IP Address: 10.10.26.122
 
 First, I ran a nmap scan on the target machine so as to enumerate more information about the services running.
 
-```
+```bash
 sudo nmap -sC -sV -vv -oN nmap_initial 10.10.26.122
 ```
 
@@ -18,15 +16,13 @@ sudo nmap -sC -sV -vv -oN nmap_initial 10.10.26.122
 
 As we can see, there are two services running on the target machine: **ssh** and **http**.
 
-<br>
-
 Let's visit the HTTP web server.
 
 <img style="float: left;" src="screenshots/screenshot2.png">
 
 Looks like a default Apache2 homepage. Looking at the source code, I could see nothing of interest. Time to use **Gobuster** to run a directory enumeration on the web server:
 
-```
+```bash
 gobuster dir -u http://10.10.26.122/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,js
 ```
 
@@ -40,23 +36,17 @@ Visiting the sub-directory, I am faced with a webpage that seems to run off **Sw
 
 <img style="float: left;" src="screenshots/screenshot4.png">
 
-<br>
-
 I proceeded to run Gobuster on this directory with the same settings as before. The results are as follows:
 
 <img style="float: left;" src="screenshots/screenshot5.png">
 
 As we can see, there are a lot of sub-directories that we can explore. I looked through all of them and the 2 most interesting directories are the **/as** and **/inc** directories.
 
-<br>
-
 Going to the **/as** directory, we can actually see a login page!
 
 <img style="float: left;" src="screenshots/screenshot6.png">
 
 Nice, this is probably a login page to an administrator dashboard. Now we just need to find a way to login. I did try some basic **SQL injection** payloads such as **' OR 1=1 --** , but it did not work. I next tried using **sqlmap** to help automate the process but it was unable to find the form located on this page. 
-
-<br>
 
 In the **/inc** directory, we can see that this contains many files required for the running of the webpage. One folder that caught my attention was the **mysql_backup/** folder.
 
@@ -65,8 +55,6 @@ In the **/inc** directory, we can see that this contains many files required for
 Sure enough, in the folder was a **sql backup file**! This could potentially be extremely useful as it can contain credentials that we can use to log into the dashboard. Furthermore, we can simply view the contents using any text editor.
 
 <img style="float: left;" src="screenshots/screenshot8.png">
-
-<br>
 
 I downloaded the backup file and opened it in a text editor. Below shows the contents:
 
@@ -78,11 +66,9 @@ There's a huge wall of text, but **line 79** reveals something very interesting:
 
 Awesome! Looks like we have a **username** (manager) and a **hashed password**.
 
-<br>
-
 The password seems to be hashed using **md5**. I'll use **John the Ripper** to crack the hash. The command used is
 
-```
+```bash
 echo 42f749ade7f9e195bf475f37a44cafcb > hash.txt
 
 john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
@@ -96,9 +82,7 @@ Nice! We got the password. The credentials of the administrator is **manager:Pas
 
 <img style="float: left;" src="screenshots/screenshot12.png">
 
-<br>
-
-And we're in! 
+Annnnnnd we're in! 
 
 My first thought is to try uploading a malicious file onto the webserver, considering that we have access to all of those directories that contains those files. I'll try using the **php reverse shell** script that I already have stored on my computer.
 
@@ -122,15 +106,13 @@ Nice! However, **there were no files inside the testDirectory folder**. My guess
 
 One way that I've learnt to do so is by simply changing the extension to a less common extension, such as **.phtml**. This works against file restrictions which work based on **blacklists**, as the developer might have forgotten to blacklist these uncommon extensions.
 
-I changed the extension to **.phtml** and tried uploading to the same directory.
-
-<br>
+I changed the extension to .phtml and tried uploading to the same directory.
 
 <img style="float: left;" src="screenshots/screenshot16.png">
 
 The reverse shell script was successfully uploaded. Now I'll listen for incoming connections using **netcat**:
 
-```
+```bash
 nc -lvnp 1234
 ```
 
@@ -138,25 +120,23 @@ With my netcat listener active, I can then click on the uploaded file to force t
 
 <img style="float: left;" src="screenshots/screenshot17.png">
 
-From there, I could traverse to the home directory of the user 'itguy' and find the user flag in the **user.txt** file.
-
-<br>
+#### From there, I could traverse to the home directory of the user 'itguy' and find the user flag in the user.txt file
 
 ---
 
 Before continuing on with my privilege escalation, I upgraded the simple shell to a fully interactive TTY shell. This can be done with the following command:
 
-```
+```bash
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
 
-Next, I needed to find a way to escalate my privileges. Since we discovered a password for the administrator account on SweetRice earlier, I was hoping that the itguy user would reuse this password. Thus, I tried to use **Password123** to log into itguy's ssh account. However, it did not work.
+Next, I needed to find a way to escalate my privileges. First, since we discovered a password for the administrator account on SweetRice earlier, I was hoping that the itguy user would reuse this password. Thus, I tried to use **Password123** to log into itguy's ssh account. However, it did not work.
 
 I then decided to use a privilege escalation script called **linpeas** to help automate the process of finding attack vectors. I transferred linpeas  over to the target machine and ran it. Unfortunately, it was not able to detect any potential PE vectors. Looks like I will need to do some manual privesc instead.
 
 Let's first see what binaries I can execute with sudo privileges. This can be done using the command:
 
-```
+```bash
 sudo -l
 ```
 
@@ -165,8 +145,6 @@ sudo -l
 <img style="float: left;" src="screenshots/screenshot18.png">
 
 Looks like we can use Perl to execute a file called **backup.pl** in itguy's home directory. The **NOPASSWD** also means that we will not be prompted for a password when running the program with sudo, which is great considering that we do not know the password of www-data.
-
-<br>
 
 Looking at the contents of backup.pl:
 
@@ -182,7 +160,7 @@ Looks like the file tries to delete certain files using the rm command. The impo
 
 I replaced the bash script commands:
 
-```
+```bash
 echo /bin/sh > copy.sh
 ```
 
@@ -192,7 +170,7 @@ Now, when we use perl to execute backup.pl, the copy.sh binary will be executed 
 
 
 
-<br>
 
-Now that I'm logged in as root, I can access the root flag from **root.txt**!
+
+#### Now that I'm logged in as root, I can access the root flag from root.txt!
 
