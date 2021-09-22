@@ -6,7 +6,7 @@
 
 <br>
 
-#### Deploy the machine
+### Deploy the machine
 
 Done.
 
