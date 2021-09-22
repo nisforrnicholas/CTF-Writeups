@@ -158,6 +158,8 @@ Running this on the exploit allowed me to gain access:
 
 
 
+
+
 #### First flag can be found in www-data's home directory.
 
 To find any potential privesc attack vectors, I went into **/dev/shm** and downloaded the **.linpeas.sh** script from my local host. This will help speed up the process of finding such attack vectors.

