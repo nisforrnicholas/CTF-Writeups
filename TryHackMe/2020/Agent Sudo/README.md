@@ -10,8 +10,6 @@
 
 Done.
 
-<br>
-
 ---
 
 ### Enumerate the machine and get all the important information
@@ -25,8 +23,6 @@ To find out what ports are open on our target machine, we can run a basic **nmap
 Seems like **ftp (21)**, **ssh (22)** and a **HTTP server (80)** is up and running.
 
 **No of open ports: 3**
-
-<br>
 
 ---
 
@@ -53,8 +49,6 @@ Gobuster wasn't giving any promising results, so let's look more closely at the 
 <br>
 
 We are actually able to redirect ourselves to a secret page using the **user-agent** header!
-
-<br>
 
 ---
 
@@ -110,8 +104,6 @@ We also note that **Agent J** is mentioned. Interesting stuff.
 
 **Agent's name: chris**
 
-<br>
-
 ---
 
 ### Done enumerate the machine? Time to brute your way out
@@ -133,8 +125,6 @@ hydra -l chris -P /usr/share/wordlists/rockyou.txt -o ftp_pass ftp://10.10.54.22
 <img style="float: left;" src="screenshots/screenshot11.png">
 
 **Password found: crystal**
-
-<br>
 
 ---
 
@@ -220,8 +210,6 @@ After this, we just have to run **John** on the **for_john.txt** file that was o
 
 Using the **rockyou.txt** wordlist, we managed to obtain the zip file password: **alien**
 
- <br>
-
 ---
 
 ### Obtain the steg password
@@ -254,8 +242,6 @@ In the end, after referring to a write-up, I realized it was just simple **base6
 
 **Looks like we got the passphrase: Area51**
 
-<br>
-
 ---
 
 ### Who is the other agent (in full name)?
@@ -266,15 +252,11 @@ We can use **Steghide** again to extract the hidden data within the **cute-alien
 
 **We found agent J's name: James**
 
-<br>
-
 ---
 
 ### SSH password
 
 **His password is: hackerrules!**
-
-<br>
 
 ---
 
@@ -289,8 +271,6 @@ With James's username and password, we can log into the SSH server with his acco
 We're in!
 
 <img style="float: left;" src="screenshots/screenshot28.png">
-
-<br>
 
 ---
 
@@ -328,8 +308,6 @@ After looking at numerous different articles, I decided to use the hint, which m
 
 **Incident of the photo: Roswell Alien Autopsy**
 
-<br>
-
 ---
 
 ### Enough with the extraordinary stuff? Time to get real.
@@ -353,8 +331,6 @@ Expected. Doing a simple google search, we find the following exploit on **explo
 This is the exploit we will be using to allow us to run /bin/bash as root.
 
 **CVE number: 2019-14287** 
-
-<br>
 
 ---
 
@@ -393,8 +369,6 @@ And we have root access!
 <img style="float: left;" src="screenshots/screenshot41.png">
 
 With that, we will be able to obtain the root flag and complete the room.
-
-<br>
 
 ---
 
