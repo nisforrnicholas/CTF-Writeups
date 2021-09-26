@@ -188,7 +188,7 @@ With that, we have successfully impersonated the **root user (NT AUTHORITY\SYSTE
 
 <br>
 
-However, even though we have a higher privileged token, we may not actually have the permissions of a privileged user (his is due to the way Windows handles permissions - it uses the Primary Token of the process and not the impersonated token to determine what the process can or cannot do). 
+However, even though we have a higher privileged token, we may not actually have the permissions of a privileged user (this is due to the way Windows handles permissions - it uses the Primary Token of the process and not the impersonated token to determine what the process can or cannot do). 
 
 Hence, we need to make sure that we migrate to a process with the correct **NT AUTHORITY\SYSTEM** permissions. 
 
