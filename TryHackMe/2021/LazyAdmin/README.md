@@ -2,19 +2,21 @@
 
 ##### Written: 18/05/2021
 
-#### IP Address: 10.10.26.122
+##### IP Address: 10.10.26.122
 
-First, I ran a nmap scan on the target machine so as to enumerate more information about the services running.
+<br>
 
-```bash
+First, let's run an **nmap** scan on the target machine so as to enumerate more information about the services running.
+
+```
 sudo nmap -sC -sV -vv -oN nmap_initial 10.10.26.122
 ```
 
- The results are as follows:
+ **Results:**
 
 <img style="float: left;" src="screenshots/screenshot1.png">
 
-As we can see, there are two services running on the target machine: **ssh** and **http**.
+As we can see, there are two services running on the target machine: **SSH** and **HTTP**.
 
 Let's visit the HTTP web server.
 
@@ -22,7 +24,7 @@ Let's visit the HTTP web server.
 
 Looks like a default Apache2 homepage. Looking at the source code, I could see nothing of interest. Time to use **Gobuster** to run a directory enumeration on the web server:
 
-```bash
+```
 gobuster dir -u http://10.10.26.122/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,js
 ```
 
@@ -46,7 +48,9 @@ Going to the **/as** directory, we can actually see a login page!
 
 <img style="float: left;" src="screenshots/screenshot6.png">
 
-Nice, this is probably a login page to an administrator dashboard. Now we just need to find a way to login. I did try some basic **SQL injection** payloads such as **' OR 1=1 --** , but it did not work. I next tried using **sqlmap** to help automate the process but it was unable to find the form located on this page. 
+Nice, this is probably a login page to an administrator dashboard. Now we just need to find a way to login. I did try some basic **SQL injection** payloads such as **' OR 1=1 --** , but they did not work. I next tried using **sqlmap** to help automate the process but it was unable to find the form located on this page. 
+
+<br>
 
 In the **/inc** directory, we can see that this contains many files required for the running of the webpage. One folder that caught my attention was the **mysql_backup/** folder.
 
@@ -68,7 +72,7 @@ Awesome! Looks like we have a **username** (manager) and a **hashed password**.
 
 The password seems to be hashed using **md5**. I'll use **John the Ripper** to crack the hash. The command used is
 
-```bash
+```
 echo 42f749ade7f9e195bf475f37a44cafcb > hash.txt
 
 john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
@@ -82,9 +86,9 @@ Nice! We got the password. The credentials of the administrator is **manager:Pas
 
 <img style="float: left;" src="screenshots/screenshot12.png">
 
-Annnnnnd we're in! 
+And we're in! 
 
-My first thought is to try uploading a malicious file onto the webserver, considering that we have access to all of those directories that contains those files. I'll try using the **php reverse shell** script that I already have stored on my computer.
+My first thought is to try uploading a malicious file onto the webserver, considering that we have access to all of those directories that contains those files. I'll try using the **php reverse shell** script that I already have stored on my computer (courtesy of pentestmonkeys).
 
 Looking for a point where I can upload files, I come across the **POST > CREATE** on the sidebar at the left of the dashboard. Clicking on it, I see a **Add File button**. This could be where I can upload my reverse shell script.
 
@@ -112,7 +116,7 @@ I changed the extension to .phtml and tried uploading to the same directory.
 
 The reverse shell script was successfully uploaded. Now I'll listen for incoming connections using **netcat**:
 
-```bash
+```
 nc -lvnp 1234
 ```
 
@@ -120,13 +124,13 @@ With my netcat listener active, I can then click on the uploaded file to force t
 
 <img style="float: left;" src="screenshots/screenshot17.png">
 
-#### From there, I could traverse to the home directory of the user 'itguy' and find the user flag in the user.txt file
+**From there, I could traverse to the home directory of the user 'itguy' and find the user flag in the user.txt file.**
 
 ---
 
 Before continuing on with my privilege escalation, I upgraded the simple shell to a fully interactive TTY shell. This can be done with the following command:
 
-```bash
+```
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
 
@@ -136,7 +140,7 @@ I then decided to use a privilege escalation script called **linpeas** to help a
 
 Let's first see what binaries I can execute with sudo privileges. This can be done using the command:
 
-```bash
+```
 sudo -l
 ```
 
@@ -160,7 +164,7 @@ Looks like the file tries to delete certain files using the rm command. The impo
 
 I replaced the bash script commands:
 
-```bash
+```
 echo /bin/sh > copy.sh
 ```
 
@@ -170,7 +174,7 @@ Now, when we use perl to execute backup.pl, the copy.sh binary will be executed 
 
 
 
+<br>
 
-
-#### Now that I'm logged in as root, I can access the root flag from root.txt!
+**Now that I'm logged in as root, I can access the root flag from root.txt and complete the room.**
 
