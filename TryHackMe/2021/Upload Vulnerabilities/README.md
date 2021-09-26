@@ -86,7 +86,7 @@ The command to do so is:
 gobuster dir -u http://jewel.uploadvulns.thm/content -x jpg -w ~/Downloads/UploadVulnsWordlist.txt -t 250
 ```
 
-*Note: -t just indicates the number of threads to execute the task*
+*(Note: -t just indicates the number of threads to execute the task)*
 
 <img style="float: left;" src="screenshots/screenshot12.png">
 
@@ -114,17 +114,15 @@ Clicking on '**upload.js**', we can see that the server has indeed implemented t
 
 Upon uploading a file, the client's browser will check for the **file size**, **magic number** and the **file extension**. The great thing about these measures being implemented on the client-side is that we can simply intercept the response in **Burpsuite**, then delete these checks from the response, before sending back to the client. Thus, we can remove all of these validation measures without having to individually circumvent them.
 
-<br>
-
 ---
 
 *Before we can do this, we need to configure Burpsuite to intercept requests to Javascript files as it will not do so by default. To do so, go to **Proxy** -> **Options** -> **Intercept Client Requests**. Edit the first entry (Match Type: File extension) and remove **^js$|***
 
 <img style="float: left;" src="screenshots/screenshot16.png">
 
----
-
 <br>
+
+---
 
 With **Burpsuite** set up, we can turn on our proxy and reload the page. Make sure to **hard reload** the page using **ctrl-f5** (instead of the usual f5). If not, the browser will simply load the page from its cache instead of requesting upload.js again.
 
@@ -140,7 +138,7 @@ Nice. We have managed to intercept the response and can simply delete the valida
 
 <br>
 
-We have dealt with the **client-side measures**, now we have to deal with measures on the **server-side**. However, before doing so, we need to craft our reverse shell payload. Not all servers use **php**, which means that our trusty php reverse shell might not always work. We need to find out what programming languages and frameworks are being used by our target web server. To do so, we can use a nifty extension called **Wappalyzer**.
+We have dealt with the **client-side measures**, now we have to deal with measures on the **server-side**. However, before doing so, we need to craft our reverse shell payload. Not all servers use **PHP**, which means that our trusty php reverse shell might not always work. We need to find out what programming languages and frameworks are being used by our target web server. To do so, we can use a nifty extension called **Wappalyzer**.
 
 <img style="float: left;" src="screenshots/screenshot19.png">
 
@@ -220,7 +218,7 @@ We just need to input **'../content/CWS.jpg'** into the form:
 
 <br>
 
-Our reverse shell is then successfully executed, allowing us to gain remote code execution onto the web server! With that, we are able to obtain the flag and complete the challenge.
+**Our reverse shell is then successfully executed, allowing us to gain remote code execution onto the web server! With that, we are able to obtain the flag and complete the challenge.**
 
 <img style="float: left;" src="screenshots/screenshot27.png">
 
