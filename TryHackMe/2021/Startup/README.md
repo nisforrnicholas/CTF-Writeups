@@ -2,15 +2,11 @@
 
 ##### Written: 17/09/2021
 
-<br>
-
 ##### IP Address: 10.10.96.254
 
 <br>
 
-<br>
-
-#### What is the secret spicy soup recipe?
+### What is the secret spicy soup recipe?
 
 First, let's run a basic **nmap** scan on our target machine using the follow command:
 
@@ -68,9 +64,9 @@ https://en.wikipedia.org/wiki/List_of_file_signatures#:~:text=This%20is%20a%20li
 
 <img style="float: left;" src="screenshots/screenshot6.png">
 
-We can see that the file is actually a **PNG** file! (*89 50 4E 47 0D 0A 1A 0A*). Now we just have to change the file extension of important.jpg to **important.png** and we should be able to view it.
+We can see that the file is actually a **PNG** file (*89 50 4E 47 0D 0A 1A 0A*). Now we just have to change the file extension of important.jpg to **important.png** and we should be able to view it.
 
-Content of **important.png**:
+Contents of **important.png**:
 
 <img style="float: left;" src="screenshots/screenshot7.png">
 
@@ -125,10 +121,10 @@ There is a **/files** directory on the web server! Visiting this directory, we a
 
 Great! This means that we can upload a **reverse shell** script onto the FTP server and then execute it from this web directory, granting us access into the machine. 
 
-We will be using the **PHP** reverse shell script created by **Pentestmonkey**. To upload the script onto the FTP server, we use the following command:
+We will be using the **PHP** **reverse shell** script created by **pentestmonkey**. To upload the script onto the FTP server, we use the following command:
 
 ```
-put < file_name >
+put <file_name>
 ```
 
 <img style="float: left;" src="screenshots/screenshot14.png">
@@ -157,11 +153,9 @@ In the **/** directory, we can find the **recipe.txt** file, which gives us flag
 
 The secret soup recipe is **love**.
 
-<br>
-
 ---
 
-#### What are the contents of user.txt?
+### What are the contents of user.txt?
 
 Within the **/** directory, we can also see an interesting directory called **incidents**. The directory contains a **pcap** file called **suspicious.pcapng**:
 
@@ -193,11 +187,9 @@ With this credentials, we can try to log into the **SSH** server:
 
 And we're in! We can then obtain **user.txt**.
 
-<br>
-
 ---
 
-#### What are the contents of root.txt?
+### What are the contents of root.txt?
 
 Within Lennie's home directory, there are two interesting directories: **Documents** and **scripts**.
 
@@ -239,4 +231,5 @@ Now, all we have to do is set up our netcat listener, sit back and relax.
 
 <img style="float: left;" src="screenshots/screenshot27.png">
 
-After a few seconds, our reverse shell is successfully opened and we are logged into the server as root. With that, we can obtain **root.txt** and complete the room.
+**After a few seconds, our reverse shell is successfully opened and we are logged into the server as root. With that, we can obtain root.txt and complete the room.**
+
