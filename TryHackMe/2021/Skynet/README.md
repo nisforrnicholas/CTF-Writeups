@@ -2,11 +2,11 @@
 
 ##### Written: 17/09/2021
 
-<br>
-
 ##### IP Address: 10.10.86.116
 
-#### What is Miles password for his emails?
+<br>
+
+### What is Miles password for his emails?
 
 Let's start off by enumerating the services that are running on our target machine. We can do this with **nmap**.
 
@@ -65,7 +65,7 @@ The emphasis on passwords makes me believe that I will have to try a dictionary 
 
 <img style="float: left;" src="screenshots/screenshot5.png">
 
-Sure enough, log1.txt looks like a wordlist of some sorts. log2.txt and log3.txt were empty files and did not contain anything useful.
+Sure enough, **log1.txt** looks like a wordlist of some sorts. log2.txt and log3.txt were empty files and did not contain anything useful.
 
 <br>
 
@@ -83,9 +83,9 @@ Before carrying on with our own manual enumeration, let's run a **Gobuster** sca
 gobuster dir -u http://10.10.86.116/ -x php,html,txt -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 100
 ```
 
-<br>
-
 *(Note that -t 100 helps to speed up the scan by increasing the number of threads)*
+
+<br>
 
 While the scan is chugging along, we can do some happy path enumeration. Searching for anything in the **'Skynet Search'** bar simply directs us back to the homepage. The same thing happens when we press the **'I'm Feeling Lucky'** button. The source code also reveals nothing of interest. Seems like there is nothing much on the main page. Let's look back at our Gobuster scan!
 
@@ -145,11 +145,9 @@ hydra -l milesdyson -P log1.txt 10.10.86.116 http-post-form "/squirrelmail/src/r
 
 Nice! We managed to obtain Mile's password: **cyborg007haloterminator**
 
-<br>
-
 ---
 
-#### What is the hidden directory?
+### What is the hidden directory?
 
 With Mile's email credentials, let's go ahead and log into his squirrelmail mailbox.
 
@@ -175,19 +173,15 @@ Once again, more files that look very academic in nature. If we look carefully, 
 
 And we have the hidden directory: **/45kra24zxs28v3yd**
 
-<br>
-
 ---
 
-#### What is the vulnerability called when you can include a remote file for malicious purposes?
+### What is the vulnerability called when you can include a remote file for malicious purposes?
 
 Vulnerability: **Remote File Inclusion**
 
-<br>
-
 ---
 
-#### What is the user flag?
+### What is the user flag?
 
 Let's visit this hidden directory:
 
@@ -265,11 +259,9 @@ We're in! :smiling_imp:
 
 From here, we can simply access miledyson's home directory and obtain **user.txt**.
 
-<br>
-
 ---
 
-#### What is the root flag?
+### What is the root flag?
 
 There is an interesting directory in milesdyson's home directory, called **backups**. Looking inside, there is a **backup.sh** shell script and a TGZ file called **backup.tgz**.
 
@@ -295,8 +287,6 @@ Looking at **GTFOBins**, we can see that we can actually exploit **tar** to spaw
 As mentioned earlier, the wildcard operator (*) actually allows us to add those tags even though we do not have direct write permissions to the **backup.sh** file. This type of attack is called a **wildcard injection attack**: 
 
 https://materials.rangeforce.com/tutorial/2019/11/08/Linux-PrivEsc-Wildcard/
-
-<br>
 
 ---
 
@@ -355,4 +345,5 @@ Thus, backup.sh is indeed a cronjob, as it is automatically run every minute. Th
 
 <img style="float: left;" src="screenshots/screenshot32.png">
 
-With that, we could obtain **root.txt** and finish the room.
+**With that, we could obtain root.txt and finish the room.**
+
