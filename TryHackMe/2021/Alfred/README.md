@@ -1,10 +1,10 @@
 # Alfred
 
-#### Written: 26/09/2021
+##### Written: 26/09/2021
 
-#### IP Address: 10.10.113.167
+##### IP Address: 10.10.113.167
 
-<br>
+======================
 
 Let's start off with a basic **nmap** scan on the target machine. The room states that the machine does not respond to ping (ICMP). Hence, we have to specify the **-Pn** tag in our nmap command. This will disable host discovery, basically skipping the process of pinging the target machine to see if it is alive.
 

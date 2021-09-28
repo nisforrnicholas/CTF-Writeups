@@ -4,7 +4,7 @@
 
 **IP Address: 10.10.83.189**
 
-<br>
+======================
 
 Navigating to the IP address, we can see an **Apache2** Default Page. This means that **port 80** is open.
 

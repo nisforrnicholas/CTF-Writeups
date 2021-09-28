@@ -8,7 +8,7 @@
 
 *This writeup is for Task 11 of the 'Upload Vulnerabilities' room.*
 
-<br>
+==================================================
 
 Since the room is specifically about upload vulnerabilities, we know how we are supposed to go about compromising our target. We are asked to visit the website: http://jewel.uploadvulns.thm. Let's do that now and see what we get:
 

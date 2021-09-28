@@ -4,7 +4,7 @@
 
 ##### IP Address: 10.10.28.153
 
-<br>
+======================
 
 ### Deploy the virtual machine on this task and explore the web application.
 
