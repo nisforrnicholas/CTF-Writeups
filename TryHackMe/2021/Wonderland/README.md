@@ -408,7 +408,7 @@ The article goes into great detail on what capabilities are and how they differ 
 
 <img style="float: left;" src="screenshots/screenshot25.png">
 
-The table above shows some common capabilities. The one that is especially important to us is the **CAP_SETUID** capability, as this allows for the changing of **UID**, essentially allowing for a non-privileged user to run a program as a privileged one (i.e. root).
+The table above shows some common capabilities. The one that is especially important to us is the **CAP_SETUID** capability, as this allows for the changing of **UID**, essentially allowing for a non-privileged user to change their UID to root.
 
 To check which files have capabilities enabled, we use:
 
