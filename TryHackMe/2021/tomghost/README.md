@@ -92,7 +92,7 @@ The home page of the skyfuck user contains two files.
 
 <img style="float: left;" src="screenshots/screenshot5.png">
 
-**credential.pgp**: Pretty Good Privacy (PGP) key
+**credential.pgp**: Pretty Good Privacy (PGP) file
 
 **tryhackme.asc**: Armoured ASCII file used by PGP
 
