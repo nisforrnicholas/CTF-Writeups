@@ -67,8 +67,6 @@ And we have another interesting directory: **/a**
 
 <img style="float: left;" src="screenshots/screenshot7.png">
 
-Nice, we have a valid web page! 
-
 From here, I figured that we can keep adding on more characters into the URL, eventually forming the word '**rabbit**'
 
 ```
