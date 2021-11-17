@@ -76,7 +76,7 @@ In the FTP server, there is a directory called **scripts**. There are 3 files in
 
 <br>
 
-**clean.sh**
+**clean.sh:**
 
 <img style="float: left;" src="screenshots/screenshot5.png">
 
@@ -84,7 +84,7 @@ Looks like a script that removes files and logs the files removed to **removed_f
 
 <br>
 
-**removed_files.log**
+**removed_files.log:**
 
 <img style="float: left;" src="screenshots/screenshot6.png">
 
@@ -92,7 +92,7 @@ The log file that **clean.sh** is saving to.
 
 <br>
 
-**to_do.txt**
+**to_do.txt:**
 
 <img style="float: left;" src="screenshots/screenshot7.png">
 
@@ -106,7 +106,7 @@ As such, what we can do is to replace **clean.sh** in the FTP server with our ow
 
 *The reverse shell payload used is from: https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md*
 
-**Our clean.sh script**
+**Our clean.sh script:**
 
 <img style="float: left;" src="screenshots/screenshot8.png">
 
