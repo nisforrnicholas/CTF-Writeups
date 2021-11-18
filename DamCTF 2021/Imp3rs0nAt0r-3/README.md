@@ -48,7 +48,7 @@ I loaded the photo into Google Lens, scrolled through the visual matches until I
 
 With that, we've found the hotel that Pax is staying at: **Copthorne Tara Hotel London Kensington**. 
 
-Flag: **dam{Copthorne_Tara_Hotel_London_Kensington}**
+Flag: **dam{copthorne_tara_hotel_london_kensington}**
 
 
 
