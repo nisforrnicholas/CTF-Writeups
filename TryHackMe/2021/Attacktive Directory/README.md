@@ -310,4 +310,4 @@ The flag for backup can be found in his desktop.
 
 The flag for Administrator can be found in his desktop.
 
-<img style="float: left;" src="screenshots/screenshot21.png">
+<img style="float: left;" src="screenshots/screenshot24.png">
