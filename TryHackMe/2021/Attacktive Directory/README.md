@@ -26,7 +26,7 @@ sudo nmap -sC -sV -vv -p- -T4 10.10.204.177
 
 We can see that port 139 is running **netbios-ssn**. This indicates that there is a Samba server running on the machine, which can be enumerated with **enum4linux**. 
 
-<br>
+---
 
 ### [ What is the NetBIOS-Domain Name of the machine? ]
 
@@ -36,7 +36,7 @@ While **enum4linux** will help us obtain more information about the machine, our
 
 NetBIOS-Domain Name: **spookysec.local**
 
-<br>
+---
 
 ### [ What invalid TLD do people commonly use for their Active Directory Domain? ]
 
@@ -64,7 +64,7 @@ We can then find out the command to enumerate valid usernames using the help men
 
 Command: **userenum**
 
-<br>
+---
 
 ### [ What notable account is discovered? (These should jump out at you) ]
 
@@ -86,7 +86,7 @@ The `--dc` option is specify the location of the Domain Controller. The `-d` opt
 
 Notable account: **svc-admin**
 
-<br>
+---
 
 ### [ What is the other notable account is discovered? (These should jump out at you) ]
 
@@ -118,7 +118,7 @@ If we try running the same script on the **backup** user, we can see that it req
 
 User account that we can query a ticket from with no password: **svc-admin**
 
-<br>
+---
 
 ### [ Looking at the Hashcat Examples Wiki page, what type of Kerberos hash did we retrieve from the KDC? (Specify the full name) ]
 
@@ -128,7 +128,7 @@ From the Hashcat Wikipedia: https://hashcat.net/wiki/doku.php?id=example_hashes
 
 Hash type: **Kerberos 5, etype 23, AS-REP**
 
-<br>
+---
 
 ### [ What mode is the hash? ]
 
@@ -136,7 +136,7 @@ The mode is the number that is beside the name of the hash.
 
 Mode: **18200**
 
-<br>
+---
 
 ### [ Now crack the hash with the modified password list provided, what is the user accounts password? ]
 
@@ -154,8 +154,6 @@ john --wordlist=passwordlist.txt --format=krb5asrep hash.txt
 
 User account's password: **management2005**
 
-<br>
-
 ---
 
 ### TASK 6: Back to the Basics 
@@ -164,7 +162,7 @@ User account's password: **management2005**
 
 We can use **smbclient** to map remote SMB shares.
 
-<br>
+---
 
 ### [ Which option will list shares? ]
 
@@ -174,7 +172,7 @@ The **man** page for smbclient shows the option that will list shares.
 
 option: **-L**
 
-<br>
+---
 
 ### [ How many remote shares is the server listing? ]
 
@@ -190,7 +188,7 @@ smbclient -L spookysec.local -U svc-admin
 
 From the results, we can see that the server is listing **6** shares.
 
-<br>
+---
 
 ### [ There is one particular share that we have access to that contains a text file. Which share is it? ]
 
@@ -202,7 +200,7 @@ smbclient //spookysec.local/backup -U svc-admin
 
 <img style="float: left;" src="screenshots/screenshot12.png">
 
-<br>
+---
 
 ### [ What is the content of the file? ]
 
@@ -212,7 +210,7 @@ We can download the **backup_credentials.txt** file onto our local machine using
 
 <img style="float: left;" src="screenshots/screenshot13.png">
 
-<br>
+---
 
 ### [ Decoding the contents of the file, what is the full contents? ]
 
@@ -240,7 +238,7 @@ Read the help page for **secretsdump.py** (found in /impacket/examples/secretsdu
 
 The method that allows us to dump NTDS.DIT is **DRSUAPI**.
 
-<br>
+---
 
 ### [ What is the Administrators NTLM hash? ]
 
@@ -256,7 +254,7 @@ python3 /opt/impacket/examples/secretsdump.py -just-dc-user Administrator spooky
 
 The NTLM hash is the part that is underlined in red: **0e0363213e37b94221497260b0bcb4fc**
 
-<br>
+---
 
 ### [ What method of attack could allow us to authenticate as the user without the password? ]
 
@@ -266,7 +264,7 @@ Doing some research online, I found out that a possible method of attack is call
 
 More details: https://www.beyondtrust.com/resources/glossary/pass-the-hash-pth-attack
 
-<br>
+---
 
 ### [ Using a tool called Evil-WinRM what option will allow us to use a hash? ]
 
@@ -298,7 +296,7 @@ Since we are in the Administrator account, we have free access into any of the o
 
 <img style="float: left;" src="screenshots/screenshot19.png">
 
-<br>
+---
 
 ### [ backup ]
 
@@ -306,7 +304,7 @@ The flag for backup can be found in his desktop.
 
 <img style="float: left;" src="screenshots/screenshot20.png">
 
-<br>
+---
 
 ### [ Administrator ]
 
