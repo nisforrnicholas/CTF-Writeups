@@ -4,15 +4,15 @@
 
 ##### IP Address: 10.10.213.55
 
-======================
+---
 
-### Deploy the machine.
+### [ Deploy the machine. ]
 
 Done.
 
 ---
 
-### Find open ports on the machine.
+### [ Find open ports on the machine. ]
 
 Let's first run a basic **nmap** scan with the **-sC**, **-sV** and **-vv** tags set. For initial results, we shall first run the scan against the top 1000 ports. After the results have come through, we can run the scan again, this time against ALL of the ports.
 
@@ -32,7 +32,7 @@ Navigating to the website, we are brought to the following page:
 
 ---
 
-### Who wrote the task list? 
+### [ Who wrote the task list? ]
 
 I decided to first work on the website. Looking at the source code, we are unable to find any interesting information. Let's run a **Gobuster** directory brute-force attack on the site, using **dirbuster's medium wordlist**. 
 
@@ -62,7 +62,7 @@ We can see that the FTP server holds the **task.txt** file in question. Let's do
 
 ---
 
-### What service can you bruteforce with the text file found?
+### [ What service can you bruteforce with the text file found? ]
 
 Looking at the other downloaded text file, it seems like a wordlist for passwords! Since we were unable to find a login page for the website *(Gobuster has revealed nothing as of now)*, the only other service that we can try brute-forcing with this wordlist is **SSH**.
 
@@ -70,7 +70,7 @@ Looking at the other downloaded text file, it seems like a wordlist for password
 
 ---
 
- ### What is the users password? 
+ ### [ What is the users password? ]
 
 We will be using **Hydra** to carry out the password brute-forcing. Since we have not encountered any other possible usernames, the username that we will try will be **lin**.
 
@@ -80,7 +80,7 @@ Lin's password: **RedDr4gonSynd1cat3**
 
 ---
 
-### Obtain user.txt
+### [ Obtain user.txt ]
 
 Now, we can log into the SSH server as **lin**.
 
@@ -92,7 +92,7 @@ With that, we can obtain the first flag.
 
 ---
 
-### Obtain Root.txt
+### [ Obtain Root.txt ]
 
 Let's do some basic privesc enumeration. First, we can check the **sudo privileges** on **lin's** account.
 

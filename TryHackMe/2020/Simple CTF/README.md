@@ -4,9 +4,9 @@
 
 ##### IP Address: 10.10.225.30
 
-======================
+---
 
-### How many services are running under port 1000?
+### [ How many services are running under port 1000? ]
 
 Running a basic (only top 1000 ports) nmap scan, we obtain the following results.
 
@@ -20,13 +20,13 @@ No of services running under port 1000: **2**
 
 ---
 
-### What is running on the higher port?
+### [ What is running on the higher port? ]
 
 **ssh** is running on the higher port.
 
 ---
 
-### What's the CVE you're using against the application? 
+### [ What's the CVE you're using against the application? ] 
 
 At first, I was trying to see if there was any exploit associated with the FTP server running on port 21 (**vsftpd 3.0.3**). However, I was unable to find a good exploit to use.
 
@@ -72,13 +72,13 @@ CVE we are using against the application: **CVE-2019-9053**
 
 ---
 
-### To what kind of vulnerability is the application vulnerable?
+### [ To what kind of vulnerability is the application vulnerable? ]
 
 **sqli** (sql injection)
 
 ---
 
-### What's the password?
+### [ What's the password? ]
 
 Before running the exploit, I wanted to understand how it worked first. 
 
@@ -154,7 +154,7 @@ Password: **secret**
 
 ---
 
-### Where can you login with the details obtained?
+### [ Where can you login with the details obtained? ]
 
 First, I made sure to check the FTP server first. Since **anonymous login** is enabled, we should not require a password to enter.
 
@@ -166,7 +166,7 @@ It turns out that we can login into **SSH.**
 
 ---
 
-### What's the user flag?
+### [ What's the user flag? ]
 
 After logging into the SSH server (using -p to specify port 2222), we can then easily retrieve **user.txt**.
 
@@ -174,7 +174,7 @@ After logging into the SSH server (using -p to specify port 2222), we can then e
 
 ---
 
-### Is there any other user in the home directory? What's its name?
+### [ Is there any other user in the home directory? What's its name? ]
 
 <img style="float: left;" src="screenshots/screenshot21.png">
 
@@ -182,7 +182,7 @@ Other user: **sunbath**
 
 ---
 
-### What can you leverage to spawn a privileged shell?
+### [ What can you leverage to spawn a privileged shell? ]
 
 Checking our sudo privileges with ```sudo -l```, we can see that **vim** is the program that we can leverage to spawn a privileged shell. This is because  we can actually spawn shells **within** vim.
 
@@ -190,7 +190,7 @@ Checking our sudo privileges with ```sudo -l```, we can see that **vim** is the 
 
 ---
 
-### What's the root flag?
+### [ What's the root flag? ]
 
 First, we open up vim with sudo.
 

@@ -4,7 +4,7 @@
 
 **IP Address: 10.10.243.180**
 
-======================
+---
 
 I first tried to visit the given IP address using my web browser to see if it hosted any website. I was greeted with the following website. This shows that port 80 is open on our target machine.
 

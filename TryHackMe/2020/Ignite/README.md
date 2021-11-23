@@ -4,7 +4,7 @@
 
 ##### IP Address: 10.10.162.4
 
-======================
+---
 
 First, let's run a basic **nmap** scan (only most common ports) on the machine. 
 

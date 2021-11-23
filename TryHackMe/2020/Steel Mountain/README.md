@@ -4,7 +4,7 @@
 
 ##### IP Address: 10.10.213.55
 
-======================
+---
 
 ### [TASK 1] INTRODUCTION
 
@@ -108,7 +108,7 @@ We can then find the **user.txt** file in his desktop directory.
 
 ### [TASK 3] PRIVILEGE ESCALATION
 
-#### To enumerate this machine, we will use a powershell script called PowerUp, that's purpose is to evaluate a Windows machine and determine any abnormalities - "PowerUp aims to be a clearinghouse of common Windows privilege escalation vectors that rely on misconfigurations."*
+#### To enumerate this machine, we will use a powershell script called PowerUp, that's purpose is to evaluate a Windows machine and determine any abnormalities - "PowerUp aims to be a clearinghouse of common Windows privilege escalation vectors that rely on misconfigurations."
 
 **You can download the script here. Now you can use the upload command in Metasploit to upload the script.**
 

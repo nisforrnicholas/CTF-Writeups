@@ -4,11 +4,11 @@
 
 ##### IP Address: 10.10.28.153
 
-======================
+---
 
 ### Deploy the virtual machine on this task and explore the web application.
 
-### What is the first ingredient Rick needs?
+### [ What is the first ingredient Rick needs? ]
 
 First, let's run a basic **nmap** scan (top 1000 ports) on the machine.
 
@@ -164,7 +164,7 @@ With that, we can obtain the first flag.
 
 ---
 
-### Whats the second ingredient Rick needs?
+### [ Whats the second ingredient Rick needs? ]
 
 Looking at **clue.txt**:
 
@@ -184,7 +184,7 @@ In rick's directory, we find the second ingredient:
 
 ---
 
-### Whats the final ingredient Rick needs?
+### [ Whats the final ingredient Rick needs? ]
 
 I'm guessing the last ingredient will be found in the **root** folder. Since we can run **sudo** fully, we can just open up another bash shell as root. This can be done with a simple ```sudo bash```. From here, we can cd into the root folder and obtain the last flag.
 
