@@ -4,15 +4,15 @@
 
 ##### IP Address: 10.10.192.114
 
-======================
+---
 
-### Deploy the machine and access its web server.
+### [ Deploy the machine and access its web server. ]
 
 Done.
 
 ---
 
-### Whats the name of the clown displayed on the homepage?
+### [ What's the name of the clown displayed on the homepage? ]
 
 First, let's run an **nmap** scan on our target machine to find out what services are running on it. The room explicitly states that the machine does not respond to Ping (ICMP). Hence, our nmap scan has to be run with the **-Pn** tag, which skips host discovery completely. This is fine as we already know that the machine is alive and hence, do not need to ping it.
 
@@ -45,7 +45,7 @@ Name of clown: **pennywise**
 
 ---
 
-### What request type is the Windows website login form using?
+### [ What request type is the Windows website login form using? ]
 
 Looking through the website, I managed to find a login page to a **blogEngine.net** service.
 
@@ -65,7 +65,7 @@ Here, we can see that the login form is using a **POST** request.
 
 ---
 
-### Guess a username, choose a password wordlist and gain credentials to a user account! 
+### [ Guess a username, choose a password wordlist and gain credentials to a user account! ]
 
 Now, let's gather the other essential information that we will pass to Hydra for our attack.
 
@@ -116,7 +116,7 @@ Credentials: **admin:1qaz2wsx**
 
 ---
 
-### Now you have logged into the website, are you able to identify the version of the BlogEngine?
+### [ Now you have logged into the website, are you able to identify the version of the BlogEngine? ]
 
 Let's go ahead and log into the BlogEngine service with our newly-found credentials.
 
@@ -130,7 +130,7 @@ Version number: **3.3.6.0**
 
 ### Use the exploit database archive to find an exploit to gain a reverse shell on this system.
 
-#### What is the CVE?
+### [ What is the CVE? ]
 
 We can simply search for '**BlogEngine**' in **exploit-db** (https://www.exploit-db.com/) to find an exploit that allows us to gain Remote Code execution on the web server.
 
@@ -146,7 +146,7 @@ CVE of exploit: **2019-6714**
 
 ### Using the public exploit, gain initial access to the server.
 
-#### Who is the webserver running as?
+### [ Who is the webserver running as? ]
 
 From the exploit:
 
@@ -178,7 +178,7 @@ The webserver is running as **iis apppool\blog**.
 
 ---
 
-### Our netcat session is a little unstable, so lets generate another reverse shell using msfvenom.
+### [ Our netcat session is a little unstable, so lets generate another reverse shell using msfvenom. ]
 
 To generate the reverse shell for a **meterpreter** session, we can use **msfvenom** with the following command:
 
@@ -208,7 +208,7 @@ And we have a meterpreter shell open!
 
 ---
 
-### What is the OS version of this windows machine?
+### [ What is the OS version of this windows machine? ]
 
 We can use the ```sysinfo``` command in Meterpreter to find out the OS version, along with other information.
 
@@ -220,7 +220,7 @@ OS Version: **Windows 2012 R2 (6.3 Build 9600)**
 
 ### Further enumerate the machine.
 
-#### What is the name of the abnormal service running?
+### [ What is the name of the abnormal service running? ]
 
 The room suggests using the **windows-exploit-suggestor** script (https://github.com/AonCyberLabs/Windows-Exploit-Suggester) to conduct some automated enumeration of the system. However, from its Github page, I realized that this script was very old and was not being maintained by its creators. Users also faced numerous issues when trying to run the script with Python3, amongst other issues. Hence, to not waste time, I've decided to use **WinPeas** (https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS) instead.
 
@@ -250,7 +250,7 @@ Name of abnormal service: **WindowsScheduler**
 
 ---
 
-### What is the name of the binary you're supposed to exploit? 
+### [ What is the name of the binary you're supposed to exploit? ]
 
 Let's first visit the **C:\Program Files (x86)\SystemScheduler** directory.
 
@@ -282,7 +282,7 @@ Name of binary to exploit: **Message.exe**
 
 ---
 
-### What is the user flag (on Jeffs Desktop)?
+### [ What is the user flag (on Jeffs Desktop)? ]
 
 On our local machine, let's go ahead and use **msfvenom** again to craft a reverse shell which uses a different port. We also name the reverse shell file as **Message.exe**.
 
@@ -312,7 +312,7 @@ With that, we can access **Jeff's Desktop** and obtain the user flag.
 
 ---
 
-### What is the root flag?
+### [ What is the root flag? ]
 
 The root flag can be found in the **Desktop** of the **Administrator** home directory.
 
@@ -320,7 +320,7 @@ The root flag can be found in the **Desktop** of the **Administrator** home dire
 
 ---
 
-### Using winPeas, what was the Original Install time? (This is date and time)
+### [ Using winPeas, what was the Original Install time? (This is date and time) ]
 
 *This section of the room is completed without the use of Metasploit.*
 

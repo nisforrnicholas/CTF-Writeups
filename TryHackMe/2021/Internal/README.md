@@ -4,9 +4,9 @@
 
 ##### IP address: 10.10.43.10
 
-======================
+---
 
-### Basic Setup
+### [ Basic Setup ]
 
 Before working on the box, the room requested that we modify our hosts file to reflect **internal.thm**. With that done, we can proceed.
 
@@ -14,7 +14,7 @@ Before working on the box, the room requested that we modify our hosts file to r
 
 ---
 
-### User.txt Flag
+### [ User.txt Flag ]
 
 Let's start off with a basic **Nmap** scan on our target. We'll be running the scan with basic scripts loaded and version enumeration enabled. Since we do not care about how 'noisy' our scan is, we can crank up the aggressiveness using the `-T4` option.
 
@@ -192,7 +192,7 @@ With that, we are able to access aubreanna's home directory and obtain the **use
 
 ---
 
-### Root.txt Flag
+### [ Root.txt Flag ]
 
 Apart from the user flag, there is also a text file called **jenkins.txt**.
 

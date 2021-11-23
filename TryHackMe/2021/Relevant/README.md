@@ -4,9 +4,9 @@
 
 ##### IP address: 10.10.72.53
 
-======================
+---
 
-### User Flag
+### [ User Flag ]
 
 We first start off with a basic **nmap** scan on the target machine. This will only target the top 1000 ports.
 
@@ -164,7 +164,7 @@ With that, we can obtain the user flag that is located in the **Desktop** of the
 
 ---
 
-### Root Flag
+### [ Root Flag ]
 
 Next, we have to find a way to escalate our privileges. Let's first check out the privileges that are enabled on our current account. We can do this with the `whoami /priv` command:
 

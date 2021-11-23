@@ -4,9 +4,9 @@
 
 ##### IP address: 10.10.189.26
 
-======================
+---
 
-### What was the URL of the page they used to upload a reverse shell?
+### [ What was the URL of the page they used to upload a reverse shell? ]
 
 Seems like the first section of this room involves analyzing the PCAP file that has been provided. We can use **Wireshark** to do so.
 
@@ -18,7 +18,7 @@ We can see that there is a **POST** request being made to **/development/**, wit
 
 ---
 
-### What payload did the attacker use to gain access?
+### [ What payload did the attacker use to gain access? ]
 
 To view the contents of **upload.php**, we can right-click on the packet of interest, click on **Follow** > **HTTP Stream**.
 
@@ -30,7 +30,7 @@ To view the contents of **upload.php**, we can right-click on the packet of inte
 
 ---
 
-### What password did the attacker use to privesc?
+### [ What password did the attacker use to privesc? ]
 
 Looking at the payload from earlier, we can see that the attacker is trying to open up a reverse shell into **port 4242** on his local machine. Sure enough, scanning through the PCAP file, I noticed several TCP packets being sent from the target machine to port 4242 of another machine (the attacker's). We can follow the TCP traffic by right-clicking on any of these packets, then clicking on **Follow** > **TCP Stream**.
 
@@ -42,7 +42,7 @@ The password that was used for privesc was: **whenevernoteartinstant**.
 
 ---
 
-### How did the attacker establish persistence?
+### [ How did the attacker establish persistence? ]
 
 <img style="float: left;" src="screenshots/screenshot4.png">
 
@@ -50,7 +50,7 @@ Following the TCP traffic, we can see that the attacker git cloned a **ssh backd
 
 ---
 
-### Using the fasttrack wordlist, how many of the system passwords were crackable?
+### [ Using the fasttrack wordlist, how many of the system passwords were crackable? ]
 
 From the TCP stream, we can find out the contents of the **/etc/shadow** file on the target machine. This file holds the hashed passwords of the users on the machine. 
 
@@ -78,7 +78,7 @@ Hence, from the results, we can see that **four** out of the five hashed passwor
 
 ### Now that you've found the code for the backdoor, it's time to analyse it.
 
-### What's the default hash for the backdoor? 
+### [ What's the default hash for the backdoor? ]
 
 Looking at the Github page for the ssh backdoor program, I noticed a file called **main.go**.
 
@@ -88,7 +88,7 @@ The default hash value is hardcoded within the script: **bdd04d9bb7621687f5df900
 
 ---
 
-### What's the hardcoded salt for the backdoor?
+### [ What's the hardcoded salt for the backdoor? ]
 
 <img style="float: left;" src="screenshots/screenshot8.png">
 
@@ -96,7 +96,7 @@ Similarly, the hardcoded salt can be found in the script, as shown above: **1c36
 
 ---
 
-### What was the hash that the attacker used? - go back to the PCAP for this!
+### [ What was the hash that the attacker used? - go back to the PCAP for this! ]
 
 Analyzing the script further, we can see that if the user provides the ```-a``` tag when running the program, they can input their own hash.
 
@@ -114,7 +114,7 @@ Hence, the hash that the attacker used is:
 
 ---
 
-### Crack the hash using rockyou and a cracking tool of your choice. What's the password?
+### [ Crack the hash using rockyou and a cracking tool of your choice. What's the password? ]
 
 Firstly, I passed the hash through an online hash identifer (https://www.tunnelsup.com/hash-analyzer/) and found out that the hash was using the **SHA512** algorithm.
 
@@ -146,13 +146,9 @@ And with that, we are able to gain the password that the attacker uses for the b
 
 ---
 
-### Now that the incident is investigated, Paradox needs someone to take control of the Overpass production server again.
+### Now that the incident is investigated, Paradox needs someone to take control of the Overpass production server again. There's flags on the box that Overpass can't afford to lose by formatting the server!
 
-### There's flags on the box that Overpass can't afford to lose by formatting the server!
-
-<br>
-
-### The attacker defaced the website. What message did they leave as a heading?
+### [ The attacker defaced the website. What message did they leave as a heading? ]
 
 Since a website was mentioned, we can try navigating to the IP address in our browser.
 
@@ -162,7 +158,7 @@ The message left was: **H4ck3d by CooctusClan**
 
 ---
 
-### Using the information you've found previously, hack your way back in!
+### [ Using the information you've found previously, hack your way back in! ]
 
 So far, we have all of the key information that is required for us to hack our way back into the target machine. We will simply be using the SSH backdoor that the attacker has set up.
 
@@ -188,7 +184,7 @@ And we have access!
 
 ---
 
-### What's the user flag?
+### [ What's the user flag? ]
 
 <img style="float: left;" src="screenshots/screenshot16.png">
 
@@ -196,7 +192,7 @@ The user flag can be found in the home directory of james.
 
 ---
 
-### What's the root flag?
+### [ What's the root flag? ]
 
 The first thing I tried to do was to find out the **sudo privileges** that the james account had. However, when prompted for james' password, I realised that **november16** did not work. I also tried using his previous password **whenevernoteartinstant**, but that did not work as well.
 

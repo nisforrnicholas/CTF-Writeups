@@ -4,9 +4,9 @@
 
 ##### IP address: 10.10.172.68
 
-======================
+---
 
-### Access the web server, who robbed the bank?
+### [ Access the web server, who robbed the bank? ]
 
 Lets first run an **nmap** scan on our target machine so as to enumerate the services that are running on it.
 
@@ -35,7 +35,7 @@ I think it's pretty clear that **Spiderman** robbed the bank.
 
 ---
 
-### What is the Joomla version?
+### [ What is the Joomla version? ]
 
 Since this webpage does not seem to contain anything of use to us, let's try to brute-force some hidden directories using **Gobuster**. We'll use Dirbuster's medium directory wordlist and also make sure to check for certain extensions such as .php and .txt.
 
@@ -61,7 +61,7 @@ Joomla Version: **3.7.0**
 
 ---
 
-### What is Jonah's cracked password?
+### [ What is Jonah's cracked password? ]
 
 Let's check if there are any publicly available exploits for Joomla Version 3.7.0. We can use **searchsploit** to do so.
 
@@ -135,7 +135,7 @@ With that, we obtain Jonah's password: **spiderman123**
 
 ---
 
-### What is the user flag?
+### [ What is the user flag? ]
 
 With Jonah's credentials, we can log into Joomla CMS.
 
@@ -219,7 +219,7 @@ With that, we are able to obtain the user flag found within jjameson's home dire
 
 ---
 
-### What is the root flag?
+### [ What is the root flag? ]
 
 Next, we need to find a way to escalate our privileges.
 

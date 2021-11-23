@@ -4,7 +4,7 @@
 
 ##### IP Address: 10.10.16.93
 
-======================
+---
 
 First, let's run a basic **nmap** scan on the target machine with standard scripts loaded and version enumeration configured. 
 

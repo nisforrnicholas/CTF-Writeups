@@ -4,7 +4,7 @@
 
 ##### IP Address: 10.10.128.245
 
-======================
+---
 
 First, I ran a basic NMAP scan on the machine (Top 1000 ports) using the command:
 

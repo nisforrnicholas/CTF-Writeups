@@ -4,9 +4,9 @@
 
 ##### IP Address: 10.10.96.254
 
-======================
+---
 
-### What is the secret spicy soup recipe?
+### [ What is the secret spicy soup recipe? ]
 
 First, let's run a basic **nmap** scan on our target machine using the follow command:
 
@@ -155,7 +155,7 @@ The secret soup recipe is **love**.
 
 ---
 
-### What are the contents of user.txt?
+### [ What are the contents of user.txt? ]
 
 Within the **/** directory, we can also see an interesting directory called **incidents**. The directory contains a **pcap** file called **suspicious.pcapng**:
 
@@ -189,7 +189,7 @@ And we're in! We can then obtain **user.txt**.
 
 ---
 
-### What are the contents of root.txt?
+### [ What are the contents of root.txt? ]
 
 Within Lennie's home directory, there are two interesting directories: **Documents** and **scripts**.
 

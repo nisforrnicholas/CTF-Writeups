@@ -4,9 +4,9 @@
 
 ##### IP address: 10.10.94.9
 
-======================
+---
 
-### Obtain the flag in user.txt
+### [ Obtain the flag in user.txt ]
 
 As always, we start off with a **nmap** scan on the target machine.
 
@@ -440,7 +440,7 @@ The user flag can be found in the **root home directory**.
 
 ---
 
-### Escalate your privileges, what is the flag in root.txt?
+### [ Escalate your privileges, what is the flag in root.txt? ]
 
 The root flag can be found in **alice's home directory**.
 
@@ -450,7 +450,7 @@ The root flag can be found in **alice's home directory**.
 
 ### A lil' Extra sumthin: 
 
-### *Steganography with the white rabbit*
+### [ Steganography with the white rabbit ]
 
 One of the images in the **/img** directory on the HTTP web server actually contains some embed data!
 

@@ -4,9 +4,9 @@
 
 ##### IP Address: 10.10.7.125
 
-======================
+---
 
-### What is key 1?
+### [ What is key 1? ]
 
 Let's start off with an **Nmap** scan on the target machine. We run the scan with standard scripts loaded and version enumeration enabled. We also do a full scan on all ports.
 
@@ -60,7 +60,7 @@ Nice, we found the first key! We can access it by visiting **http://10.10.7.125/
 
 ---
 
-### What is key 2?
+### [ What is key 2? ]
 
 Visiting http://10.10.7.125/fsocity.dic prompts us to download a file called **fsocity.dic**.
 
@@ -218,7 +218,7 @@ With our shell upgraded, we can su into robot's account and access the second fl
 
 ---
 
-### What is key 3?
+### [ What is key 3? ]
 
 We now have to find a way to escalate our privileges.
 

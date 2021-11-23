@@ -4,9 +4,9 @@
 
 ##### IP address: 10.10.28.35
 
-======================
+---
 
-### Compromise this machine and obtain user.txt
+### [ Compromise this machine and obtain user.txt ]
 
 Let's first start off with an **Nmap** scan on the target machine.
 
@@ -92,9 +92,9 @@ The home page of the skyfuck user contains two files.
 
 <img style="float: left;" src="screenshots/screenshot5.png">
 
-**credential.pgp**: Pretty Good Privacy (PGP) file
+**credential.pgp**: Pretty Good Privacy (PGP) encrypted message
 
-**tryhackme.asc**: Armoured ASCII file used by PGP
+**tryhackme.asc**: Armoured PGP key
 
 <br>
 
@@ -152,7 +152,7 @@ The user flag can be found in merlin's home directory.
 
 ---
 
-### Escalate privileges and obtain root.txt
+### [ Escalate privileges and obtain root.txt ]
 
 Next, let's find a way to escalate our privileges.
 

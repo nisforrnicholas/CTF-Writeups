@@ -4,9 +4,9 @@
 
 ##### IP Address: 10.10.86.116
 
-======================
+---
 
-### What is Miles password for his emails?
+### [ What is Miles password for his emails? ]
 
 Let's start off by enumerating the services that are running on our target machine. We can do this with **nmap**.
 
@@ -147,7 +147,7 @@ Nice! We managed to obtain Mile's password: **cyborg007haloterminator**
 
 ---
 
-### What is the hidden directory?
+### [ What is the hidden directory? ]
 
 With Mile's email credentials, let's go ahead and log into his squirrelmail mailbox.
 
@@ -175,13 +175,13 @@ And we have the hidden directory: **/45kra24zxs28v3yd**
 
 ---
 
-### What is the vulnerability called when you can include a remote file for malicious purposes?
+### [ What is the vulnerability called when you can include a remote file for malicious purposes? ]
 
 Vulnerability: **Remote File Inclusion**
 
 ---
 
-### What is the user flag?
+### [ What is the user flag? ]
 
 Let's visit this hidden directory:
 
@@ -261,7 +261,7 @@ From here, we can simply access miledyson's home directory and obtain **user.txt
 
 ---
 
-### What is the root flag?
+### [ What is the root flag? ]
 
 There is an interesting directory in milesdyson's home directory, called **backups**. Looking inside, there is a **backup.sh** shell script and a TGZ file called **backup.tgz**.
 

@@ -4,7 +4,7 @@
 
 ##### IP address: 10.10.138.135
 
-======================
+---
 
 First, I ran an **nmap scan** to enumerate the services that are running on the target machine. The command used is:
 

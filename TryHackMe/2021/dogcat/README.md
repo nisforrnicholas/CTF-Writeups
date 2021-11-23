@@ -4,9 +4,9 @@
 
 ##### IP address: 10.10.65.102
 
-======================
+---
 
-### What is flag 1?
+### [ What is flag 1? ]
 
 Let's first start off with an **Nmap** scan on the target machine. We shall just scan the top 1000 ports for now. 
 
@@ -229,7 +229,7 @@ And with that, we can find 3/4 flags!
 
 ---
 
-### What is flag 2?
+### [ What is flag 2? ]
 
 **Flag 2** can be found in **/var/www/flag2_QMW7JvaY2LvK.txt**
 
@@ -237,7 +237,7 @@ And with that, we can find 3/4 flags!
 
 ---
 
-### What is flag 3?
+### [ What is flag 3? ]
 
 **Flag 3** can be found in **/root/flag3.txt**
 
@@ -245,7 +245,7 @@ And with that, we can find 3/4 flags!
 
 ---
 
-### What is flag 4?
+### [ What is flag 4? ]
 
 If we do a `ls -al` on the root directory, we can actually see a hidden **.dockerenv** file.
 

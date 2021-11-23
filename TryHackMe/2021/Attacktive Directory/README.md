@@ -12,7 +12,7 @@
 
 ### TASK 3: Welcome to Attacktive Directory
 
-### What tool will allow us to enumerate port 139/445?
+### [ What tool will allow us to enumerate port 139/445? ]
 
 Let's first conduct an **Nmap** scan on the target machine.
 
@@ -28,7 +28,7 @@ We can see that port 139 is running **netbios-ssn**. This indicates that there i
 
 <br>
 
-### What is the NetBIOS-Domain Name of the machine?
+### [ What is the NetBIOS-Domain Name of the machine? ]
 
 While **enum4linux** will help us obtain more information about the machine, our nmap scan has already revealed the NetBIOS-Domain Name.
 
@@ -38,7 +38,7 @@ NetBIOS-Domain Name: **spookysec.local**
 
 <br>
 
-### What invalid TLD do people commonly use for their Active Directory Domain?
+### [ What invalid TLD do people commonly use for their Active Directory Domain? ]
 
 Doing some research online, I found the following website: https://wiki.samba.org/index.php/Active_Directory_Naming_FAQ
 
@@ -50,7 +50,7 @@ An invalid TLD people commonly use for their active directory domain: **.local**
 
 ### TASK 4: Enumerating Users via Kerberos 
 
-### What command within Kerbrute will allow us to enumerate valid usernames?
+### [ What command within Kerbrute will allow us to enumerate valid usernames? ]
 
 We first install Kerbrute onto our local machine (https://github.com/ropnop/kerbrute). 
 
@@ -66,7 +66,7 @@ Command: **userenum**
 
 <br>
 
-### What notable account is discovered? (These should jump out at you)
+### [ What notable account is discovered? (These should jump out at you) ]
 
 Before running Kerbrute, we first have to add the **'spookysec.local'** domain to our **/etc/hosts** file.
 
@@ -88,7 +88,7 @@ Notable account: **svc-admin**
 
 <br>
 
-### What is the other notable account is discovered? (These should jump out at you)
+### [ What is the other notable account is discovered? (These should jump out at you) ]
 
 Other notable account: **backup**
 
@@ -96,7 +96,7 @@ Other notable account: **backup**
 
 ### TASK 5: Abusing Kerberos 
 
-### We have two user accounts that we could potentially query a ticket from. Which user account can you query a ticket from with no password?
+### [ We have two user accounts that we could potentially query a ticket from. Which user account can you query a ticket from with no password? ]
 
 After installing **impacket** onto our local machine, we can use the **GetNPUsers.py** script located in the **/impacket/examples**.
 
@@ -120,7 +120,7 @@ User account that we can query a ticket from with no password: **svc-admin**
 
 <br>
 
-### Looking at the Hashcat Examples Wiki page, what type of Kerberos hash did we retrieve from the KDC? (Specify the full name)
+### [ Looking at the Hashcat Examples Wiki page, what type of Kerberos hash did we retrieve from the KDC? (Specify the full name) ]
 
 From the Hashcat Wikipedia: https://hashcat.net/wiki/doku.php?id=example_hashes
 
@@ -130,7 +130,7 @@ Hash type: **Kerberos 5, etype 23, AS-REP**
 
 <br>
 
-### What mode is the hash?
+### [ What mode is the hash? ]
 
 The mode is the number that is beside the name of the hash.
 
@@ -138,7 +138,7 @@ Mode: **18200**
 
 <br>
 
-### Now crack the hash with the modified password list provided, what is the user accounts password?
+### [ Now crack the hash with the modified password list provided, what is the user accounts password? ]
 
 Instead of using Hashcat to crack the hash, I decided to use **John the Ripper** instead. I saved the hash into a text file called **hash.txt**.
 
@@ -160,13 +160,13 @@ User account's password: **management2005**
 
 ### TASK 6: Back to the Basics 
 
-### What utility can we use to map remote SMB shares?
+### [ What utility can we use to map remote SMB shares? ]
 
 We can use **smbclient** to map remote SMB shares.
 
 <br>
 
-### Which option will list shares?
+### [ Which option will list shares? ]
 
 The **man** page for smbclient shows the option that will list shares.
 
@@ -176,7 +176,7 @@ option: **-L**
 
 <br>
 
-### How many remote shares is the server listing?
+### [ How many remote shares is the server listing? ]
 
 With svc-admin's account, we can use smbclient to find out the shares that svc-admin can access.
 
@@ -192,7 +192,7 @@ From the results, we can see that the server is listing **6** shares.
 
 <br>
 
-### There is one particular share that we have access to that contains a text file. Which share is it?
+### [ There is one particular share that we have access to that contains a text file. Which share is it? ]
 
 After trying to log into the various shares, I managed to find a text file within the **backup** share.
 
@@ -204,7 +204,7 @@ smbclient //spookysec.local/backup -U svc-admin
 
 <br>
 
-### What is the content of the file?
+### [ What is the content of the file? ]
 
 We can download the **backup_credentials.txt** file onto our local machine using the `get` command.
 
@@ -214,7 +214,7 @@ We can download the **backup_credentials.txt** file onto our local machine using
 
 <br>
 
-### Decoding the contents of the file, what is the full contents?
+### [ Decoding the contents of the file, what is the full contents? ]
 
 I realized that the content in backup_credentials.txt is actually **base64 encoded**. We can decode it like so:
 
@@ -232,7 +232,7 @@ Nice! We've found the credentials for the **backup** account.
 
 ### TASK 7: Elevating Privileges within the Domain 
 
-### What method allowed us to dump NTDS.DIT?
+### [ What method allowed us to dump NTDS.DIT? ]
 
 Read the help page for **secretsdump.py** (found in /impacket/examples/secretsdump.py):
 
@@ -242,7 +242,7 @@ The method that allows us to dump NTDS.DIT is **DRSUAPI**.
 
 <br>
 
-### What is the Administrators NTLM hash?
+### [ What is the Administrators NTLM hash? ]
 
 We can use secretsdump.py like so:
 
@@ -258,7 +258,7 @@ The NTLM hash is the part that is underlined in red: **0e0363213e37b94221497260b
 
 <br>
 
-### What method of attack could allow us to authenticate as the user without the password?
+### [ What method of attack could allow us to authenticate as the user without the password? ]
 
 Doing some research online, I found out that a possible method of attack is called: **pass the hash**
 
@@ -268,7 +268,7 @@ More details: https://www.beyondtrust.com/resources/glossary/pass-the-hash-pth-a
 
 <br>
 
-### Using a tool called Evil-WinRM what option will allow us to use a hash?
+### [ Using a tool called Evil-WinRM what option will allow us to use a hash? ]
 
 Download the Evil-WinRM tool from: https://github.com/Hackplayers/evil-winrm
 
@@ -282,7 +282,7 @@ Option to use a hash: **-H**
 
 ### TASK 8: Flag Submission Panel 
 
-### svc-admin
+### [ svc-admin ]
 
 We can use the hash that we found earlier to log into the **Administrator** account with evil-winrm. evil-winrm will spawn a shell for us, which will allows us to explore the machine.
 
@@ -298,7 +298,9 @@ Since we are in the Administrator account, we have free access into any of the o
 
 <img style="float: left;" src="screenshots/screenshot19.png">
 
-### backup
+<br>
+
+### [ backup ]
 
 The flag for backup can be found in his desktop.
 
@@ -306,7 +308,7 @@ The flag for backup can be found in his desktop.
 
 <br>
 
-### Administrator
+### [ Administrator ]
 
 The flag for Administrator can be found in his desktop.
 

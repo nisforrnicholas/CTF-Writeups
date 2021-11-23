@@ -6,7 +6,7 @@
 
 ---
 
-### Enumerate the machine.  How many ports are open?
+### [ Enumerate the machine.  How many ports are open? ]
 
 As always, we start off with a **nmap** scan on the target machine.
 
@@ -22,19 +22,19 @@ From the results, we can see that there are **4** ports open.
 
 ---
 
-### What service is running on port 21?
+### [ What service is running on port 21? ]
 
 **FTP** is running on port 21.
 
 ---
 
-### What service is running on ports 139 and 445?
+### [ What service is running on ports 139 and 445? ]
 
 **SMB** (Samba) is running on ports 139 and 445.
 
 ---
 
-### There's a share on the user's computer.  What's it called?
+### [ There's a share on the user's computer.  What's it called? ]
 
 To enumerate the share on the SMB server, we can use the command:
 
@@ -50,7 +50,7 @@ The share is called **pics**.
 
 ---
 
-### user.txt
+### [ user.txt ]
 
 Let's first take a look at the **pics** share. We can connect to it using:
 
@@ -132,7 +132,7 @@ After a few seconds, the reverse shell is successfully opened and we are logged 
 
 ---
 
-### root.txt
+### [ root.txt ]
 
 Now we need to find a way to escalate our privileges.
 
