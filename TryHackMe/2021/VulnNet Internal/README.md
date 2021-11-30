@@ -227,7 +227,7 @@ Detailed steps on how to set this up can be found here: https://kb.iu.edu/d/aews
 ssh-keygen -t rsa
 
 // transfer our public key into an 'authorized_keys' file in the /.ssh folder of the 'sys-internal' user
-rsync -av ~/.ssh/ id_rsa.pub rsync://rsync-connect@10.10.102.151/files/sys-internal/.ssh/authorized_keys
+rsync -av ~/.ssh/id_rsa.pub rsync://rsync-connect@10.10.102.151/files/sys-internal/.ssh/authorized_keys
 ```
 
 Once this is done, we can log into the **sys-internal** user's account using our private key.
