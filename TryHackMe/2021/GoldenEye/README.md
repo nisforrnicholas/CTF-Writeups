@@ -434,7 +434,8 @@ Doing some research online, I came across an existing exploit that allows us to 
 * *Overlayfs mount would only be visible within user namespace, so let namespace process change CWD to overlayfs, thus making the overlayfs also visible outside the namespace via the proc filesystem.*
 * *Make su on overlayfs world writable without changing the owner*
 * *Let process outside user namespace write*
-* *arbitrary content to the file applying a slightly modified variant of the SetgidDirectoryPrivilegeEscalation exploit.Execute the modified su binary*
+* *arbitrary content to the file applying a slightly modified variant of the SetgidDirectoryPrivilegeEscalation exploit.*
+* *Execute the modified su binary*
 
 ---
 
