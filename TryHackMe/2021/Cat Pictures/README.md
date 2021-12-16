@@ -1,5 +1,11 @@
 # Cat Pictures
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `port knocking`,  `ftp`,  `reverse shell`,  `Binary Ninja`,  `ssh private key`,  `docker`,  `cronjob`
+
+---
+
 ##### Written: 30/11/2021
 
 ##### IP address: 10.10.21.0

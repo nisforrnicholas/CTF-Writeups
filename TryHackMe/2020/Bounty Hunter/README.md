@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `nmap`, `ftp`, `hydra`, `tar`
+**Tags:** `Linux`,  `nmap`,  `ftp`,  `hydra`,  `ssh`,  `tar`
 
 ---
 

@@ -1,5 +1,11 @@
 # Steel Mountain
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Windows`,  `nmap`,  `rejetto`,  `metasploit`,  `PowerUp.ps1`,  `msfvenom`,  `reverse shell`,  `Powershell`
+
+---
+
 ##### Written: 10/09/2020
 
 ##### IP Address: 10.10.213.55

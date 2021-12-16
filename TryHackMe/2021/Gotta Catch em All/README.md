@@ -1,5 +1,11 @@
 # Gotta Catch'em All!
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `http source code`,  `ssh`,  `cyberchef`
+
+---
+
 ##### Written: 07/12/2021
 
 ##### IP address: 10.10.23.231

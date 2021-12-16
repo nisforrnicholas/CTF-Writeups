@@ -1,5 +1,11 @@
 # Anthem
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Windows`,  `nmap`,  `robots.txt`,  `umbraco`,  `OSINT`,  `http source code`,  `RDP`,  `icacls`
+
+---
+
 ##### Written: 13/12/2021
 
 ##### IP address: 10.10.188.43

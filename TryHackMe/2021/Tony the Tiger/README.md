@@ -1,5 +1,11 @@
 # Tony the Tiger
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `steganography`,  `Jboss`,  `Java deserialization`,  `find`
+
+---
+
 ##### Written: 15/12/2021
 
 ##### IP address: 10.10.104.15

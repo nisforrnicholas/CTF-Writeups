@@ -1,5 +1,11 @@
 # tomghost
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `GhostCat`,  `PGP`,  `john`,  `zip`
+
+---
+
 ##### Written: 05/11/2021
 
 ##### IP address: 10.10.28.35

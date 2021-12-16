@@ -1,5 +1,11 @@
 # Alfred
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Windows`,  `nmap`,  `Jenkins`,  `Powershell`,  `Reverse shell`,  `msfvenom`,  `meterpreter`,  `token impersonation`
+
+---
+
 ##### Written: 26/09/2021
 
 ##### IP Address: 10.10.113.167

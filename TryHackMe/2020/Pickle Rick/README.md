@@ -1,5 +1,11 @@
 # Pickle Rick
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `HTTP source code`,  `robots.txt`,  `gobuster`,  `OS Injection`,  `reverse shell`,  `full sudo privileges`
+
+---
+
 ##### Written: 20/09/2020
 
 ##### IP Address: 10.10.28.153

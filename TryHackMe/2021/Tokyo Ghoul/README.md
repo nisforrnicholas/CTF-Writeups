@@ -1,5 +1,11 @@
 # Tokyo Ghoul
 
+##### Difficulty: [ Medium ]
+
+**Tags:** `Linux`,  `nmap`,  `http source code`,  `ftp`,  `steghide`,  `cyberchef`,  `morse code`,  `Gobuster`,  `LFI`,  `john`,  `ssh`,  `escape Python sandbox`
+
+---
+
 ##### Written: 03/12/2021
 
 ##### IP Address: 10.10.3.234

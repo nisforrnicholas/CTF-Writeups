@@ -1,5 +1,11 @@
 # Res
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `redis`,  `reverse shell`,  `xxd`
+
+---
+
 ##### Written: 23/11/2021
 
 ##### IP address: 10.10.46.25

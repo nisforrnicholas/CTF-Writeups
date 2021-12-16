@@ -1,5 +1,11 @@
 # Startup
 
+##### Difficulty: [ Easy ] 
+
+**Tags:** `Linux`,  `nmap`,  `ftp`,  `magic numbers`,  `Gobuster`,  `reverse shell`,  `Wireshark`,  `ssh`,  `cronjob`,  `pspy`
+
+---
+
 ##### Written: 17/09/2021
 
 ##### IP Address: 10.10.96.254

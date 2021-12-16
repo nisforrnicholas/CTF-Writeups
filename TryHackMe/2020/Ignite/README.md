@@ -2,7 +2,7 @@
 
 ##### Difficulty: Easy
 
-**Tags:** `nmap`,  `default_creds`,  `fuelcms`,  `searchsploit`,  `sql_injection`,  `linpeas`,  `exposed_config` 
+**Tags:** `Linux`,  `nmap`,  `fuelcms`,  `default creds`,  `searchsploit`,  `sqli`,  `reverse shell`,  `config file` 
 
 ---
 

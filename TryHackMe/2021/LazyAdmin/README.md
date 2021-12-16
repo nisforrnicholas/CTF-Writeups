@@ -1,5 +1,11 @@
 # LazyAdmin
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `backup file`,  `john`,  `SweetRice`,  `reverse shell`
+
+---
+
 ##### Written: 18/05/2021
 
 ##### IP Address: 10.10.26.122

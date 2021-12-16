@@ -1,5 +1,11 @@
 # Mr Robot CTF
 
+##### Difficulty: [ Medium ]
+
+**Tags:** `Linux`,  `nmap`,  `robots.txt`,  `WordPress`,  `wpscan`,  `reverse shell`,  `john`,  `nmap`
+
+---
+
 ##### Written: 03/11/2021
 
 ##### IP Address: 10.10.7.125

@@ -1,5 +1,11 @@
 # Relevant 
 
+##### Difficulty: [ Medium ]
+
+**Tags:** `Windows`,  `nmap`,  `smb`,  `Gobuster`,  `Wappalyzer`,  `reverse shell`,  `token impersonation`,  `PrintSpoofer`
+
+---
+
 ##### Written: 23/10/2021
 
 ##### IP address: 10.10.72.53

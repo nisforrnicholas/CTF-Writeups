@@ -1,5 +1,11 @@
 # Peak Hill
 
+##### Difficulty: [ Medium ]
+
+**Tags:** `Linux`,  `nmap`,  `ftp`,  `python pickle`,  `cyberchef`,  `umcompyle6`,  `ssh private key`,  `python deserialization`
+
+---
+
 ##### Written: 29/11/2021
 
 ##### IP address: 10.10.149.209

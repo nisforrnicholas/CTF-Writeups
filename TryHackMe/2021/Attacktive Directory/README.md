@@ -1,5 +1,11 @@
 # **Attacktive** Directory
 
+##### Difficulty: [ Medium ]
+
+**Tags:** `Windows`,  `Active Directory`,  `nmap`,  `kerbrute`,  `impacket`,  `john`,  `smb`,  `pass the hash`,  `Evil-WinRm`
+
+---
+
 ##### Written: 22/11/2021
 
 ##### IP address: 10.10.204.177

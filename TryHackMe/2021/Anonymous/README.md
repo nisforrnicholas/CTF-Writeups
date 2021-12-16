@@ -1,5 +1,11 @@
 # Anonymous
 
+##### Difficulty: [ Medium ]
+
+**Tags:** `Linux`,  `nmap`,  `smb`,  `ftp`,  `cronjob`,  `reverse shell`,  `env`  
+
+---
+
 ##### Written: 17/11/2021
 
 ##### IP address: 10.10.186.111

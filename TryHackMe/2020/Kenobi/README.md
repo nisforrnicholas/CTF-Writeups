@@ -1,5 +1,11 @@
 # Kenobi
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `NFS`,  `searchsploit`,  `id_rsa`,  `ssh`,  `SUID file`,  `path_manipulation`
+
+---
+
 ##### Written: 28/08/2020
 
 **IP Address: 10.10.243.180**

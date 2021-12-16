@@ -1,5 +1,11 @@
 # The Cod Caper
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `nikto`,  `sqlmap`,  `reverse shell`,  `SUID file`,  `GDB`,  `john`,  `ssh`
+
+---
+
 ##### Written: 29/08/2020
 
 **IP Address: 10.10.83.189**

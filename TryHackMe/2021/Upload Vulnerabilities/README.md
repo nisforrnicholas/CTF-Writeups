@@ -1,5 +1,11 @@
 # Upload Vulnerabilities
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `upload restrictions`,  `reverse shell`,  `burpsuite`,  `Wappalyzer`
+
+---
+
 ##### Written: 13/09/2021
 
 ##### IP Address: 10.10.166.33

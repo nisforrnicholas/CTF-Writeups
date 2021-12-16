@@ -1,5 +1,11 @@
 # Skynet
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `enum4linux`,  `hydra`,  `squirrelmail`,  `smb`,  `Cuppa CMS`,  `RFI`,  `reverse shell`,  `cronjob`,  `tar`
+
+---
+
 ##### Written: 17/09/2021
 
 ##### IP Address: 10.10.86.116

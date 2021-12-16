@@ -1,5 +1,11 @@
 # Looking Glass
 
+##### Difficulty: [ Medium ]
+
+**Tags:** `Linux`,  `nmap`,  `ssh`,  `vigenere cipher`,  `cronjob`,  `misconfigured directory permissions`,  `ssh private key`,  `reverse shell`,  `host change during sudo`
+
+---
+
 ##### Written: 08/12/2021
 
 ##### IP Address: 10.10.135.105

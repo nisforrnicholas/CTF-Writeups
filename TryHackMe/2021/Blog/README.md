@@ -1,5 +1,11 @@
 # Blog
 
+##### Difficulty: [ Medium ]
+
+**Tags:** `Linux`,  `nmap`,  `WordPress`,  `wpscan`,  `metasploit`,  `SUID file`,  `ltrace`
+
+---
+
 ##### Written: 26/11/2021
 
 ##### IP address: 10.10.90.101

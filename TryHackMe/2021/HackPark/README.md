@@ -1,5 +1,11 @@
 # HackPark
 
+##### Difficulty: [ Medium ]
+
+**Tags:** `Windows`,  `nmap`,  `BlogEngine`,  `hydra`,  `reverse shell`,  `msfvenom`,  `powershell`,  `meterpreter`,  `cronjob`
+
+---
+
 ##### Written: 28/09/2021
 
 ##### IP Address: 10.10.192.114

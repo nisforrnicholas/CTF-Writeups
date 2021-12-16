@@ -1,5 +1,11 @@
 # ConvertMyVideo
 
+##### Difficulty: [ Medium ]
+
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `http source code`,  `OS injection`,  `reverse shell`,  `pspy`,  `cronjob`
+
+---
+
 ##### Written: 10/12/2021
 
 ##### IP address: 10.10.77.218

@@ -2,7 +2,7 @@
 
 **Difficulty: [ Easy ]**
 
-**Tags:** `nmap`, `user-agent`, `burpsuite`, `ftp`, `hydra`, `binwalk`, `john`, `steghide`, `ssh`, `sudo` 
+**Tags:** `Linux`,  `nmap`,  `user-agent`,  `burpsuite`,  `ftp`,  `hydra`,  `binwalk`,  `john`,  `steghide`,  `ssh`,  `sudo` 
 
 ---
 

@@ -1,5 +1,11 @@
 # Internal
 
+##### Difficulty: [ Hard ]
+
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `WordPress`,  `wpscan`,  `reverse shell`,  `ssh`,  `docker`,  `ssh tunnel`,  `Jenkins`,  `hydra` 
+
+---
+
 ##### Written: 25/10/2021
 
 ##### IP address: 10.10.43.10

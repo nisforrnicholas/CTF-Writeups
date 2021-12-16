@@ -1,5 +1,11 @@
 # INCLUSION
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `LFI`,  `socat`
+
+---
+
 ##### Written: 17/05/2021
 
 ##### IP Address: 10.10.16.93

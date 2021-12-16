@@ -1,5 +1,11 @@
 # RootMe
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `upload restrictions`,  `reverse shell`,  `python`
+
+---
+
 ##### Written: 07/05/2021
 
 ##### IP Address: 10.10.128.245

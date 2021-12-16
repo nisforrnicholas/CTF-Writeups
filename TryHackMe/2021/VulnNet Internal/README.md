@@ -1,5 +1,11 @@
 # VulnNet: Internal
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `enum4linux-ng`,  `smb`,  `redis`,  `NFS`,  `config file`,  `rsync`,  `authorized_keys`,  `ssh tunnel`,  `TeamCity`,  `grep`,  `reverse shell`
+
+---
+
 ##### Written: 24/11/2021
 
 ##### IP address: 10.10.102.151

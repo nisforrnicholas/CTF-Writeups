@@ -1,5 +1,11 @@
 # Simple CTF
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `Linux`,  `nmap`,  `gobuster`,  `cms_made_simple`,  `searchsploit`,  `sqli`,  `hashcat`,  `ftp`,   `ssh`,  `vim`
+
+---
+
 ##### Written: 16/09/2020
 
 ##### IP Address: 10.10.225.30

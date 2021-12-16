@@ -1,5 +1,11 @@
 # dogcat
 
+##### Difficulty: [ Medium ]
+
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `LFI`,  `log poisoning`,  `reverse shell`,  `env`
+
+---
+
 ##### Written: 01/11/2021
 
 ##### IP address: 10.10.65.102

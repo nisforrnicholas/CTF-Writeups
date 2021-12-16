@@ -1,5 +1,11 @@
 # The Great Escape
 
+##### Difficulty: [ Medium ]
+
+**Tags:** `Linux`,  `nmap`,  `.well-known`,  `security.txt`,  `SSRF`,  `OS injection`,  `git`,  `port knocking`,  `docker`,  `docker mount`
+
+---
+
 ##### Written: 05/12/2021
 
 ##### IP address: 10.10.169.214

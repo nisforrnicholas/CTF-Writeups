@@ -1,5 +1,11 @@
 # Daily Bugle
 
+##### Difficulty: [ Hard ]
+
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `Joomla`,  `sqlmap`,  `john`,  `reverse shell`,  `config file`,  `yum`
+
+---
+
 ##### Written: 30/10/2021
 
 ##### IP address: 10.10.172.68
