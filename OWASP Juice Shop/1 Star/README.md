@@ -1,5 +1,7 @@
 # OWASP Juice Shop - 1 Star Challenges
 
+## Table of Contents
+
 [Bonus Payload](#challenge1)
 
 [Bully Chatbot](#challenge2)
@@ -24,7 +26,7 @@
 
 [Zero Stars](#challenge12)
 
-
+---
 
 <a name="challenge1"/>
 
