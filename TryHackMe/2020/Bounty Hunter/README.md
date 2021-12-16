@@ -1,5 +1,11 @@
 # Bounty Hunter
 
+##### Difficulty: [ Easy ]
+
+**Tags:** `nmap`, `ftp`, `hydra`, `tar`
+
+---
+
 ##### Written: 14/09/2020
 
 ##### IP Address: 10.10.213.55

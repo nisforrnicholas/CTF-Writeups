@@ -1,5 +1,11 @@
 # Agent Sudo
 
+**Difficulty: [ Easy ]**
+
+**Tags:** `nmap`, `user-agent`, `burpsuite`, `ftp`, `hydra`, `binwalk`, `john`, `steghide`, `ssh`, `sudo` 
+
+---
+
 ##### Written: 19/09/2020
 
 ##### IP Address: 10.10.63.185
