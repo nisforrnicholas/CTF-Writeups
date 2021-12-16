@@ -1,5 +1,11 @@
 # IGNITE
 
+##### Difficulty: Easy
+
+**Tags:** `nmap`,  `default_creds`,  `fuelcms`,  `searchsploit`,  `sql_injection`,  `linpeas`,  `exposed_config` 
+
+---
+
 ##### Written: 06/09/2020
 
 ##### IP Address: 10.10.162.4
