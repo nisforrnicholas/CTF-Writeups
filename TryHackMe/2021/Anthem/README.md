@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Windows`,  `nmap`,  `robots.txt`,  `umbraco`,  `OSINT`,  `http source code`,  `RDP`,  `icacls`
+**Tags:** `Windows`,  `nmap`,  `umbraco`,  `OSINT`,  `RDP`,  `icacls`
 
 ---
 

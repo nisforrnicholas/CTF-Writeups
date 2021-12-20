@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Linux`,  `nmap`,  `port knocking`,  `ftp`,  `reverse shell`,  `Binary Ninja`,  `ssh private key`,  `docker`,  `cronjob`
+**Tags:** `Linux`,  `nmap`,  `port knocking`,  `ftp`,  `reverse shell`,  `Binary Ninja`,  `docker`,  `cronjob`
 
 ---
 

@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Windows`,  `nmap`,  `Jenkins`,  `Powershell`,  `Reverse shell`,  `msfvenom`,  `meterpreter`,  `token impersonation`
+**Tags:** `Windows`,  `nmap`,  `Jenkins`,  `Powershell`,  `reverse shell`,  `msfvenom`,  `meterpreter`,  `token impersonation`
 
 ---
 

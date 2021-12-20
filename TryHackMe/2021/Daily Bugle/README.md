@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Hard ]
 
-**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `Joomla`,  `sqlmap`,  `john`,  `reverse shell`,  `config file`,  `yum`
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `Joomla`,  `sqlmap`,  `john`,  `reverse shell`,  `yum`
 
 ---
 

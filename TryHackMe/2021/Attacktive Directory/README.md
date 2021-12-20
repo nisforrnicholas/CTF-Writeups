@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Medium ]
 
-**Tags:** `Windows`,  `Active Directory`,  `nmap`,  `kerbrute`,  `impacket`,  `john`,  `smb`,  `pass the hash`,  `Evil-WinRm`
+**Tags:** `Windows`,  `Active Directory`,  `nmap`,  `kerbrute`,  `impacket`,  `john`,  `smb`,  `pass-the-hash`,  `Evil-WinRm`
 
 ---
 

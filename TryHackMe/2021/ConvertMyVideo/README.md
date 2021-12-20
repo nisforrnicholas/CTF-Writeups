@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Medium ]
 
-**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `http source code`,  `OS injection`,  `reverse shell`,  `pspy`,  `cronjob`
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `OS injection`,  `reverse shell`,  `pspy`,  `cronjob`
 
 ---
 

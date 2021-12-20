@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Medium ]
 
-**Tags:** `Linux`,  `nmap`,  `http source code`,  `cyberchef`,  `POP3`,  `hydra`,  `moodle`,  `exiftool`,  `reverse shell`,  `vulnerable OS version`
+**Tags:** `Linux`,  `nmap`,  `POP3`,  `hydra`,  `moodle`,  `exiftool`,  `reverse shell`,  `vulnerable OS version`
 
 ---
 

@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Medium ]
 
-**Tags:** `Linux`,  `nmap`,  `http source code`,  `burpsuite`,   `reverse shell`,  `Wappalyzer`,  `mongodb`,  `LD_PRELOAD`
+**Tags:** `Linux`,  `nmap`,  `burpsuite`,   `reverse shell`,  `mongodb`,  `LD_PRELOAD`
 
 ---
 

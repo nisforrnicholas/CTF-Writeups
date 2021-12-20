@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Hard ]
 
-**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `WordPress`,  `wpscan`,  `reverse shell`,  `ssh`,  `docker`,  `ssh tunnel`,  `Jenkins`,  `hydra` 
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `WordPress`,  `wpscan`,  `reverse shell`,  `ssh`,  `docker`,  `ssh-tunnel`,  `Jenkins`,  `hydra` 
 
 ---
 

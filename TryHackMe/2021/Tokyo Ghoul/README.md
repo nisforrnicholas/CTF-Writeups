@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Medium ]
 
-**Tags:** `Linux`,  `nmap`,  `http source code`,  `ftp`,  `steghide`,  `cyberchef`,  `morse code`,  `Gobuster`,  `LFI`,  `john`,  `ssh`,  `escape Python sandbox`
+**Tags:** `Linux`,  `nmap`,  `ftp`,  `steghide`,  `morse code`,  `Gobuster`,  `LFI`,  `john`,  `ssh`,  `escape Python sandbox`
 
 ---
 

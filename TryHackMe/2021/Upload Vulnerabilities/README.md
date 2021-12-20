@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Linux`,  `nmap`,  `upload restrictions`,  `reverse shell`,  `burpsuite`,  `Wappalyzer`
+**Tags:** `Linux`,  `nmap`,  `upload restrictions`,  `reverse shell`,  `burpsuite`,  `node.js`
 
 ---
 

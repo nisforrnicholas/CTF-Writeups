@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Medium ]
 
-**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `http source code`,  `Python library hijacking`,  `reverse engineering`,  `path manipulation`,  `Linux capabilities`,  `perl`
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `Python library hijacking`,  `reverse engineering`,  `path manipulation`,  `Linux capabilities`,  `perl`
 
 ---
 

@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Medium ]
 
-**Tags:** `Linux`,  `nmap`,  `ssh`,  `vigenere cipher`,  `cronjob`,  `misconfigured directory permissions`,  `ssh private key`,  `reverse shell`,  `host change during sudo`
+**Tags:** `Linux`,  `nmap`,  `ssh`,  `vigenere cipher`,  `cronjob`,  `misconfigured directory permissions`,  `reverse shell`,  `host change during sudo`
 
 ---
 

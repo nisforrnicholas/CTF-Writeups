@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Medium ]
 
-**Tags:** `Linux`,  `nmap`,  `ftp`,  `python pickle`,  `cyberchef`,  `umcompyle6`,  `ssh private key`,  `python deserialization`
+**Tags:** `Linux`,  `nmap`,  `ftp`,  `python pickle`,  `umcompyle6`,  `python deserialization`
 
 ---
 

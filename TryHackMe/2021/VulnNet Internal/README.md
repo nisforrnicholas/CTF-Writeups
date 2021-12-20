@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Linux`,  `nmap`,  `enum4linux-ng`,  `smb`,  `redis`,  `NFS`,  `config file`,  `rsync`,  `authorized_keys`,  `ssh tunnel`,  `TeamCity`,  `grep`,  `reverse shell`
+**Tags:** `Linux`,  `nmap`,  `enum4linux-ng`,  `smb`,  `redis`,  `NFS`,  `rsync`,  `authorized_keys`,  `ssh tunnel`,  `TeamCity`,  `grep`,  `reverse shell`
 
 ---
 

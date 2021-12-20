@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `js`,  `ssh private key`,  `john`,  `ssh`,  `cronjob`,  `reverse shell`
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `javascript`,  `john`,  `ssh`,  `cronjob`,  `reverse shell`
 
 ---
 

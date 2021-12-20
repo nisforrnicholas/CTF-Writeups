@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Linux`,  `nmap`,  `steganography`,  `Jboss`,  `Java deserialization`,  `find`
+**Tags:** `Linux`,  `nmap`,  `strings`,  `Jboss`,  `Java deserialization`,  `find`
 
 ---
 

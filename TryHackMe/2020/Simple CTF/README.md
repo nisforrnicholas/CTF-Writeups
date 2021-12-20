@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Linux`,  `nmap`,  `gobuster`,  `cms_made_simple`,  `searchsploit`,  `sqli`,  `hashcat`,  `ftp`,   `ssh`,  `vim`
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `cms_made_simple`,  `searchsploit`,  `sqli`,  `hashcat`,  `ftp`,   `ssh`,  `vim`
 
 ---
 

@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Medium ]
 
-**Tags:** `Linux`,  `nmap`,  `robots.txt`,  `WordPress`,  `wpscan`,  `reverse shell`,  `john`,  `nmap`
+**Tags:** `Linux`,  `nmap`,  `WordPress`,  `wpscan`,  `reverse shell`,  `john`
 
 ---
 

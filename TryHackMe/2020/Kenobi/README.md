@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Linux`,  `nmap`,  `NFS`,  `searchsploit`,  `id_rsa`,  `ssh`,  `SUID file`,  `path_manipulation`
+**Tags:** `Linux`,  `nmap`,  `NFS`,  `searchsploit`,  `ssh`,  `SUID file`,  `path_manipulation`
 
 ---
 

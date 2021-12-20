@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Linux`,  `nmap`,  `http source code`,  `ssh`,  `cyberchef`
+**Tags:** `Linux`,  `nmap`,  `ROT-14 cipher`,  `ssh`
 
 ---
 

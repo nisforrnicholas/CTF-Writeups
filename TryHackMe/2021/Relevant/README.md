@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Medium ]
 
-**Tags:** `Windows`,  `nmap`,  `smb`,  `Gobuster`,  `Wappalyzer`,  `reverse shell`,  `token impersonation`,  `PrintSpoofer`
+**Tags:** `Windows`,  `nmap`,  `smb`,  `Gobuster`,  `reverse shell`,  `token impersonation`,  `PrintSpoofer`
 
 ---
 

@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Linux`,  `nmap`,  `GhostCat`,  `PGP`,  `john`,  `zip`
+**Tags:** `Linux`,  `nmap`,  `GhostCat vulnerability`,  `PGP`,  `john`,  `zip`
 
 ---
 

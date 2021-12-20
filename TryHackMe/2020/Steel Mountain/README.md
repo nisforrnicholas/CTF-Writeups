@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Windows`,  `nmap`,  `rejetto`,  `metasploit`,  `PowerUp.ps1`,  `msfvenom`,  `reverse shell`,  `Powershell`
+**Tags:** `Windows`,  `nmap`,  `rejetto`,  `metasploit`,  `PowerUp`,  `msfvenom`,  `reverse shell`,  `Powershell`
 
 ---
 

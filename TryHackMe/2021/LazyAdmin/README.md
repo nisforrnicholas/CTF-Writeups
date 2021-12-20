@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `backup file`,  `john`,  `SweetRice`,  `reverse shell`
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `john`,  `SweetRice`,  `reverse shell`
 
 ---
 

@@ -2,7 +2,7 @@
 
 ##### Difficulty: Easy
 
-**Tags:** `Linux`,  `nmap`,  `fuelcms`,  `default creds`,  `searchsploit`,  `sqli`,  `reverse shell`,  `config file` 
+**Tags:** `Linux`,  `nmap`,  `fuelcms`,  `searchsploit`,  `sqli`,  `reverse shell`
 
 ---
 

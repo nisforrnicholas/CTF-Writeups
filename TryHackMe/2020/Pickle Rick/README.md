@@ -2,7 +2,7 @@
 
 ##### Difficulty: [ Easy ]
 
-**Tags:** `Linux`,  `nmap`,  `HTTP source code`,  `robots.txt`,  `gobuster`,  `OS Injection`,  `reverse shell`,  `full sudo privileges`
+**Tags:** `Linux`,  `nmap`,  `Gobuster`,  `OS Injection`,  `reverse shell`,  `full sudo privileges`
 
 ---
 
