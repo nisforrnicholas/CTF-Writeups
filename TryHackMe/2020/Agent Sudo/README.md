@@ -38,7 +38,7 @@ Let's check out that webserver first.
 
 <img style="float: left;" src="screenshots/screenshot2.png">
 
-Interesting. Let's run a **Gobuster** directory brute-force attack to see if we can access a login page within the site. We can also try adding extensions to the search options, which we can do using the '**-x**' option. We can try checking if there also PHP or HTML files hidden within the web server. 
+Interesting. Let's run a **Gobuster** directory brute-force attack to see if we can access a login page within the site. We can also try adding extensions to the search options, which we can do using the '**-x**' option. We can try checking if there's also PHP or HTML files hidden within the web server. 
 
 ```
 gobuster dir -u http://10.10.63.185/ -x php,html -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
@@ -48,7 +48,7 @@ While Gobuster is running, we can also check the source code and console to see 
 
  <br>
 
-Gobuster wasn't giving any promising results, so let's look more closely at the information given on the main page. They mention using the logging in to the webpage with the agent's name as the **user-agent**. I was able to find some useful information on this website: https://betanews.com/2017/03/22/user-agent-based-attacks-are-a-low-key-risk-that-shouldnt-be-overlooked/
+Gobuster wasn't giving any promising results, so let's look more closely at the information given on the main page. They mention logging in to the webpage with the agent's name as the **user-agent**. I was able to find some useful information on this website: https://betanews.com/2017/03/22/user-agent-based-attacks-are-a-low-key-risk-that-shouldnt-be-overlooked/
 
 <img style="float: left;" src="screenshots/screenshot3.png">
 
@@ -120,7 +120,7 @@ First, let's try to see if anonymous login is enabled on the FTP server. This is
 
 <img style="float: left;" src="screenshots/screenshot10.png">
 
-Looks like it's not. Since we know a potential username,**chris**, we can use **Hydra** to crack the password for the FTP server.
+Looks like it's not. Since we know a potential username, **chris**, we can use **Hydra** to crack the password for the FTP server.
 
 ```
 hydra -l chris -P /usr/share/wordlists/rockyou.txt -o ftp_pass ftp://10.10.54.221
