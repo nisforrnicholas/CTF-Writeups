@@ -32,6 +32,7 @@ PORT    STATE SERVICE     REASON         VERSION
 |   256 53:75:a7:4a:a8:aa:46:66:6a:12:8c:cd:c2:6f:39:aa (ECDSA)
 | ecdsa-sha2-nistp256 
 [REDACTED]
+|   256 7f:c2:2f:3d:64:d9:0a:50:74:60:36:03:98:00:75:98 (ED25519)
 |_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGnNa6K0GzjKiPdClth/sy8rhOd8KtkuagrRkr4tiATl
 80/tcp  open  http        syn-ack ttl 61 Apache httpd 2.4.29 ((Ubuntu))
 | http-methods: 
@@ -368,11 +369,7 @@ Thus, we know which user to target! We also know that his first name is a potent
 
 Finally, we need to crack Harry's password. It's mentioned that his password uses **best64**.
 
----
-
-*From my research, I found out that best64 is actually a rule file (https://github.com/hashcat/hashcat/blob/master/rules/best64.rule) that is available with `hashcat`.*
-
----
+(*From my research, I found out that best64 is actually a rule file (https://github.com/hashcat/hashcat/blob/master/rules/best64.rule) that is available with `hashcat`)*
 
 Remember the **spellnames.txt** wordlist that we obtained at the start? What if we have to use the best64 rule file to mutate this wordlist? This will then give us a password wordlist that we can use to crack harry's password!
 
@@ -568,7 +565,7 @@ The extracted number will then be correct, allowing the `impressive()` function 
 
 <br>
 
-Now we need to manipulate our PATH such that when the binary runs `uname`, it's actually running a malicious binary that we created.
+Now we need to manipulate our PATH such that when the binary runs `uname`, it's actually running a malicious script that we created.
 
 To do so, I first created a script called 'uname' in /tmp which reads out the root flag:
 
