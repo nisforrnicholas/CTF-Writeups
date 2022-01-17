@@ -130,7 +130,7 @@ curl -G -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2Vyb
 
 <img style="float: left;" src="screenshots/screenshot3.png">
 
-Nice, it works! We can see that there are 4 databases in the server. 
+Nice, it works! We can see that there are 5 databases in the server. 
 
 Let's now list out all of the measurements (aka tables) in the **tanks** db:
 
